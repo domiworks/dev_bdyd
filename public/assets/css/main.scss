@@ -1,0 +1,29 @@
+@mixin dimension($val, $vil){
+	width: $val;
+	height: $vil;
+}
+
+@mixin box-sizing($val){
+	box-sizing: $val;
+	-moz-box-sizing: $val; /*Firefox 1-3*/
+	-webkit-box-sizing: $val; /* Safari */
+}
+
+@function substraction($some-number, $another-number){
+	@return $some-number + $another-number
+}
+
+@mixin transition($val){
+	-webkit-transition: all ease-out $val;
+	-moz-transition: all ease-out $val;
+	-o-transition: all  ease-out $val;
+	transition: all ease-out $val;
+}
+
+@mixin border-radius($val){
+	-webkit-border-radius: $val;
+	-moz-border-radius: $val;
+	-o-border-radius: $val;
+	border-radius: $val;
+}
+  

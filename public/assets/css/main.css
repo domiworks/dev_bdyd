@@ -1,3 +1,26 @@
-
+@font-face {
+  font-family: A_Bold;
+  src: url("../fonts/aileron/Aileron-Bold.otf") format("opentype"); }
+@font-face {
+  font-family: A_Regular;
+  src: url("../fonts/aileron/Aileron-Regular.otf") format("opentype"); }
+@font-face {
+  font-family: A_Light;
+  src: url("../fonts/aileron/Aileron-Light.otf") format("opentype"); }
+@font-face {
+  font-family: A_Thin;
+  src: url("../fonts/aileron/Aileron-Thin.otf") format("opentype"); }
+.s_top_nav {
+  height: 70px;
+  width: 100%;
+  display: block;
+  position: relative; }
+  .s_top_nav ul.s_first_level_menu {
+    float: right;
+    padding-left: 0px;
+    margin-bottom: 0px; }
+    .s_top_nav ul.s_first_level_menu li {
+      list-style-type: none;
+      float: left; }
 
 /*# sourceMappingURL=main.css.map */

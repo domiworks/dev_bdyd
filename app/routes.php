@@ -15,3 +15,9 @@ Route::get('/', function()
 {
 	return View::make('pages.front.home.home');
 });
+
+
+Route::get('/suatu_link', function()
+{
+	return View::make('pages.front.sebuah_folder.sesuatu');
+});

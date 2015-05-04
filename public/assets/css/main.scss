@@ -45,6 +45,19 @@
 	src: url("../fonts/aileron/Aileron-Thin.otf") format("opentype");
 }
 
+$bdydcolor: #262261;
+/*---------------------------------------------------------------*/
+
+.s_top_nav_cntr {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: #fff;
+	height: 70px;
+	width: 100%;
+	z-index: 1;
+}
+
 .s_top_nav {
 	height: 70px;
 	width: 100%;
@@ -63,4 +76,12 @@
 			}
 		}
 	}
+}
+
+.s_landing_cntr {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100vh;
+	background-color: $bdydcolor;
 }

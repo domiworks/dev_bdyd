@@ -44,9 +44,37 @@
 	font-family: A_Thin;
 	src: url("../fonts/aileron/Aileron-Thin.otf") format("opentype");
 }
-
+$fontcolor: #232323;
 $bdydcolor: #262261;
 /*---------------------------------------------------------------*/
+.s_tbl {
+    display: table;
+    height: inherit;
+    width: 100%;
+
+    .s_cell {
+        display: table-cell;
+        height: inherit;
+        width: 100%;
+        vertical-align: middle; 
+    }
+}
+/*---------------------------------------------------------------*/
+body {
+	font-family: 'Open Sans' !important;
+	color: $fontcolor;
+	font-size: 15px !important;
+}
+
+
+h2 {
+	font-size: 3em !important;
+	font-weight: 300 !important;
+}
+
+p {
+	line-height: 1.7em !important
+}
 
 .s_top_nav_cntr {
 	position: absolute;
@@ -72,7 +100,14 @@ $bdydcolor: #262261;
 			list-style-type: none;
 			float: left;
 			a {
-
+				color: $fontcolor;
+				text-decoration: none;
+				line-height: 70px;
+				padding-left:10px;
+				padding-right:10px;
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
 	}
@@ -83,5 +118,12 @@ $bdydcolor: #262261;
 	display: block;
 	width: 100%;
 	height: 100vh;
-	background-color: $bdydcolor;
+	//background-color: $bdydcolor;
+	background-color: #efefef;
+}
+
+.s_common_ctr {
+	width: 100%;
+	display: block;
+	position: relative;
 }

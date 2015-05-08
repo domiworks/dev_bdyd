@@ -11,13 +11,45 @@
 |
 */
 
+//Home
 Route::get('/', function()
 {
 	return View::make('pages.front.home.home');
 });
 
-
-Route::get('/suatu_link', function()
+//BDYD 2015
+Route::get('/bdyd-2015', function()
 {
-	return View::make('pages.front.sebuah_folder.sesuatu');
+	return View::make('pages.front.bdyd_2015.home');
 });
+
+//About BDYD 2015
+Route::get('/about-bdyd', function()
+{
+	return View::make('pages.front.home.home');
+});
+
+//Past BDYD 2015
+Route::get('/past-bdyd', function()
+{
+	return View::make('pages.front.home.home');
+});
+
+//Sponsor dan Donatur
+Route::get('/sponsor-donatur', function()
+{
+	return View::make('pages.front.home.home');
+});
+
+//Gallery
+Route::get('/gallery', function()
+{
+	return View::make('pages.front.home.home');
+});
+
+//Pendaftaran
+Route::get('/pendaftaran', function()
+{
+	return View::make('pages.front.pendaftaran.pendaftaran');
+});
+

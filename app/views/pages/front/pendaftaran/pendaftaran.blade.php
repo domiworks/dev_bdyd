@@ -165,7 +165,7 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-default">Sign in</button>
+							<button type="button" class="btn btn-default">Sign Up</button>
 						</div>
 					</div>
 				</form>
@@ -174,6 +174,37 @@
 		</div>
 	</div>
 </section>
+<script>
+$('body').on('click', '#f_send_email', function() { 
+	// $fullname = $('#fullname').val(); 
+	// $email_address = $('#email_address').val(); 
+	// $subject = $('#subject').val(); 
+	// $description = $('#description').val(); 
+	
+
+	var formData = new FormData();
+	// formData.append('fullname', $fullname); 
+	// formData.append('email_address', $email_address); 
+	// formData.append('subject', $subject); 
+	// formData.append('description', $description); 
+	
+
+	$.ajax({
+		type: 'POST',
+		url: "{{URL('post_email_contact')}}",
+		data: formData, 
+		processData: false,
+		contentType: false,				
+		success: function(response) { 
+			alert(response); 
+		},
+		error: function(xhr, textStatus, errorThrown) {
+			alert("readyState: "+xhr.readyState+"\nstatus: "+xhr.status);
+			alert("responseText: "+xhr.responseText);
+		}
+	});
+});
+</script>
 
 
 @stop

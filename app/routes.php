@@ -47,9 +47,16 @@ Route::get('/gallery', function()
 	return View::make('pages.front.home.home');
 });
 
-//Pendaftaran
-Route::get('/pendaftaran', function()
-{
-	return View::make('pages.front.pendaftaran.pendaftaran');
-});
+/*
+|--------------------------------------------------------------------------
+|	Pendaftaran
+|--------------------------------------------------------------------------
+*/
+
+//page pendaftaran 
+Route::get('/pendaftaran', ['as'=>'categoryList', 'uses'=>'PendaftaranFrontController@view_pendaftaran']);
+
+//funtion ke engine
+// Route::post('/post_pendaftaran', ['as'=>'tamu.post_pendaftaran', 'uses'=>'CategoryListManagementController@catList']);
+
 

@@ -4,7 +4,8 @@
 	
 
 			public function view_pendaftaran(){ 
-				return View::make('pages.front.pendaftaran.pendaftaran');
+				$all_paroki = ParokiController::get_all_paroki();
+				return View::make('pages.front.pendaftaran.pendaftaran', compact('all_paroki'));
 			}
 
 	}

@@ -57,6 +57,6 @@ Route::get('/gallery', function()
 Route::get('/pendaftaran', ['as'=>'categoryList', 'uses'=>'PendaftaranFrontController@view_pendaftaran']);
 
 //funtion ke engine
-// Route::post('/post_pendaftaran', ['as'=>'tamu.post_pendaftaran', 'uses'=>'CategoryListManagementController@catList']);
+ Route::post('/post_pendaftaran', ['as'=>'tamu.post_pendaftaran', 'uses'=>'PesertaController@create_user']);
 
 

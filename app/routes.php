@@ -21,12 +21,12 @@ Route::get('/', function()
 Route::get('/bdyd-2015', function()
 {
 	return View::make('pages.front.bdyd_2015.home');
-});
+}); 
 
 //About BDYD 2015
 Route::get('/about-bdyd', function()
 {
-	return View::make('pages.front.home.home');
+	return View::make('pages.front.bdyd_2015.home');
 });
 
 //Past BDYD 2015

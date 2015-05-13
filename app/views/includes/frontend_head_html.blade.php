@@ -25,6 +25,19 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/js/bootstrap-3.3.4-dist/css/bootstrap.min.css') }}" />
 	<script src="{{ asset('assets/js/bootstrap-3.3.4-dist/js/bootstrap.min.js') }}"></script>
 
+	<!-- Bootstrap Material -->
+	<link href="{{ asset('assets/js/bootstrap-material/css/roboto.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets/js/bootstrap-material/css/material.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets/js/bootstrap-material/css/ripples.min.css') }}" rel="stylesheet">
+	<script src="{{ asset('assets/js/bootstrap-material/js/ripples.min.js') }}"></script>
+	<script src="{{ asset('assets/js/bootstrap-material/js/material.min.js') }}"></script>
+	<script>
+		$(document).ready(function() {
+	        // This command is used to initialize some elements and make them work properly
+	        $.material.init();
+	    });
+	</script> 
+
 	<!-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/js/owlCarousel/assets/owl.carousel.css') }}" />
 	<script src="{{ asset('assets/js/owlCarousel/owl.carousel.min.js') }}"></script> -->
 

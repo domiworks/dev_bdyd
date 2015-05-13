@@ -14,9 +14,9 @@
 
 
 
-			{{ $mytime = Carbon\Carbon::now(); }}
+			{{-- $mytime = Carbon\Carbon::now(); --}}
 			<br />
-			{{ $mytime->toDateTimeString(); }}
+			{{-- $mytime->toDateTimeString(); --}}
 
 
 				

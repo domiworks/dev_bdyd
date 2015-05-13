@@ -1,39 +1,58 @@
 @font-face {
   font-family: A_Bold;
-  src: url("../fonts/aileron/Aileron-Bold.otf") format("opentype"); }
+  src: url("../fonts/aileron/Aileron-Bold.otf") format("opentype");
+}
+
 @font-face {
   font-family: A_Regular;
-  src: url("../fonts/aileron/Aileron-Regular.otf") format("opentype"); }
+  src: url("../fonts/aileron/Aileron-Regular.otf") format("opentype");
+}
+
 @font-face {
   font-family: A_Light;
-  src: url("../fonts/aileron/Aileron-Light.otf") format("opentype"); }
+  src: url("../fonts/aileron/Aileron-Light.otf") format("opentype");
+}
+
 @font-face {
   font-family: A_Thin;
-  src: url("../fonts/aileron/Aileron-Thin.otf") format("opentype"); }
+  src: url("../fonts/aileron/Aileron-Thin.otf") format("opentype");
+}
+
 /*---------------------------------------------------------------*/
+/* line 50, E:/xampp/htdocs/dev_bdyd/public/assets/css/main.scss */
 .s_tbl {
   display: table;
   height: inherit;
-  width: 100%; }
-  .s_tbl .s_cell {
-    display: table-cell;
-    height: inherit;
-    width: 100%;
-    vertical-align: middle; }
+  width: 100%;
+}
+/* line 55, E:/xampp/htdocs/dev_bdyd/public/assets/css/main.scss */
+.s_tbl .s_cell {
+  display: table-cell;
+  height: inherit;
+  width: 100%;
+  vertical-align: middle;
+}
 
 /*---------------------------------------------------------------*/
+/* line 63, E:/xampp/htdocs/dev_bdyd/public/assets/css/main.scss */
 body {
   font-family: 'Open Sans' !important;
   color: #232323;
-  font-size: 15px !important; }
+  font-size: 15px !important;
+}
 
+/* line 70, E:/xampp/htdocs/dev_bdyd/public/assets/css/main.scss */
 h2 {
   font-size: 3em !important;
-  font-weight: 300 !important; }
+  font-weight: 300 !important;
+}
 
+/* line 75, E:/xampp/htdocs/dev_bdyd/public/assets/css/main.scss */
 p {
-  line-height: 1.7em !important; }
+  line-height: 1.7em !important;
+}
 
+/* line 79, E:/xampp/htdocs/dev_bdyd/public/assets/css/main.scss */
 .s_top_nav_cntr {
   position: absolute;
   top: 0px;
@@ -41,39 +60,52 @@ p {
   background-color: #fff;
   height: 70px;
   width: 100%;
-  z-index: 1; }
+  z-index: 1;
+}
 
+/* line 89, E:/xampp/htdocs/dev_bdyd/public/assets/css/main.scss */
 .s_top_nav {
   height: 70px;
   width: 100%;
   display: block;
-  position: relative; }
-  .s_top_nav ul.s_first_level_menu {
-    float: right;
-    padding-left: 0px;
-    margin-bottom: 0px; }
-    .s_top_nav ul.s_first_level_menu li {
-      list-style-type: none;
-      float: left; }
-      .s_top_nav ul.s_first_level_menu li a {
-        color: #232323;
-        text-decoration: none;
-        line-height: 70px;
-        padding-left: 10px;
-        padding-right: 10px; }
-        .s_top_nav ul.s_first_level_menu li a:hover {
-          text-decoration: underline; }
+  position: relative;
+}
+/* line 95, E:/xampp/htdocs/dev_bdyd/public/assets/css/main.scss */
+.s_top_nav ul.s_first_level_menu {
+  float: right;
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+/* line 99, E:/xampp/htdocs/dev_bdyd/public/assets/css/main.scss */
+.s_top_nav ul.s_first_level_menu li {
+  list-style-type: none;
+  float: left;
+}
+/* line 102, E:/xampp/htdocs/dev_bdyd/public/assets/css/main.scss */
+.s_top_nav ul.s_first_level_menu li a {
+  color: #232323;
+  text-decoration: none;
+  line-height: 70px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* line 108, E:/xampp/htdocs/dev_bdyd/public/assets/css/main.scss */
+.s_top_nav ul.s_first_level_menu li a:hover {
+  text-decoration: underline;
+}
 
+/* line 116, E:/xampp/htdocs/dev_bdyd/public/assets/css/main.scss */
 .s_landing_cntr {
   position: relative;
   display: block;
   width: 100%;
   height: 100vh;
-  background-color: #efefef; }
+  background-color: #efefef;
+}
 
+/* line 125, E:/xampp/htdocs/dev_bdyd/public/assets/css/main.scss */
 .s_common_ctr {
   width: 100%;
   display: block;
-  position: relative; }
-
-/*# sourceMappingURL=main.css.map */
+  position: relative;
+}

@@ -2553,7 +2553,8 @@ Then, run this script to get the list.
   content: "\e8f5";
 }
 body {
-  background-color: #eeeeee;
+  /*background-color: #eeeeee;*/
+  background-color: #f2f2f2;
 }
 body.inverse {
   background: #333333;
@@ -2582,8 +2583,8 @@ h6,
 .h2,
 .h3,
 .h4 {
-  font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  /*font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;*/
 }
 h5,
 h6 {

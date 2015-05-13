@@ -34,7 +34,7 @@ class PesertaController extends BaseController {
 		// days_count
 
 
-		$nama_lengkap 		= '1';
+		$nama_lengkap 		= Input::get('nama_lengkap');
 		$nama_panggilan 	= '1';
 		$jenis_kelamin 		= '1';
 		$tempat_lahir 		= '1';

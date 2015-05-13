@@ -31,6 +31,11 @@
 	<link href="{{ asset('assets/js/bootstrap-material/css/ripples.min.css') }}" rel="stylesheet">
 	<script src="{{ asset('assets/js/bootstrap-material/js/ripples.min.js') }}"></script>
 	<script src="{{ asset('assets/js/bootstrap-material/js/material.min.js') }}"></script>
+
+	<!-- Bootstrap Datepicker -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/js/bootstrap-datepicker-master/dist/css/bootstrap-datepicker.css') }}" />
+	<script src="{{ asset('assets/js/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.js') }}"></script>
+
 	<script>
 		$(document).ready(function() {
 	        // This command is used to initialize some elements and make them work properly

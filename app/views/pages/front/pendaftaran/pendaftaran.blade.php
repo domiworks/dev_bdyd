@@ -50,7 +50,12 @@
 					<div class="form-group">
 						<label for="jenis_kelamin" class="col-sm-2 control-label">Jenis Kelamin</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="jenis_kelamin" placeholder="text">
+							<div class="radio" style="float: left;">
+								<label><input type="radio" name="gender" id="jenis_kelamin" value="1">Pria</label>
+							</div>
+							<div class="radio" style="float: left; margin-left: 40px;">
+								<label><input type="radio" name="gender" id="jenis_kelamin" value="0">Wanita</label>
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
@@ -62,8 +67,11 @@
 					<div class="form-group">
 						<label for="tanggal_lahir" class="col-sm-2 control-label">Tanggal Lahir</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="tanggal_lahir" placeholder="text">
+							<input type="text" class="form-control datepicker" id="tanggal_lahir" placeholder="text">
 						</div>
+						<script>
+$('.datepicker').datepicker()
+</script>
 					</div>
 					<div class="form-group">
 						<label for="alamat_tinggal" class="col-sm-2 control-label">Alamat Tinggal</label>
@@ -80,7 +88,7 @@
 					<div class="form-group">
 						<label for="no_handphone" class="col-sm-2 control-label">No. Handphone</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="no_handphone" placeholder="text">
+							<input type="number" class="form-control" id="no_handphone" placeholder="text">
 						</div>
 					</div>
 					<div class="form-group">

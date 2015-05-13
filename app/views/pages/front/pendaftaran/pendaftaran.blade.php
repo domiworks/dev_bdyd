@@ -78,9 +78,9 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="no_hp" class="col-sm-2 control-label">No. Handphone</label>
+						<label for="no_handphone" class="col-sm-2 control-label">No. Handphone</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="no_hp" placeholder="text">
+							<input type="text" class="form-control" id="no_handphone" placeholder="text">
 						</div>
 					</div>
 					<div class="form-group">
@@ -109,6 +109,7 @@
 								@foreach($all_paroki as $paroki) 
 								<option value="{{$paroki->nama_paroki}}" data-dekanat="{{$paroki->nama_dekanat}}">{{$paroki->nama_paroki}}</option>
 								@endforeach
+								<input type="hidden" id="paroki_val" value="">
 							</select>
 						</div>
 					</div>
@@ -116,6 +117,14 @@
 						<label for="dekanat" class="col-sm-2 control-label">Dekanat</label>
 						<div class="col-sm-5">
 							<input type="text" class="form-control" id="dekanat" placeholder="--" readonly>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="jumlah_hari" class="col-sm-2 control-label">Jumlah Hari</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" id="jumlah_hari" placeholder="Jumlah Hari">
 						</div>
 					</div>
 					<!-- <div class="form-group">
@@ -187,6 +196,7 @@
 <script>
 $('body').on('change', 'select#paroki', function() { 
     $( "select#paroki option:selected" ).each(function() { 
+      $('#paroki_val').val($( this ).val());
       $('#dekanat').val($( this ).data('dekanat'));
     });
     
@@ -195,18 +205,57 @@ $('body').on('change', 'select#paroki', function() {
   
 
 $('body').on('click', '#f_send_pendaftaran', function() { 
-	// $fullname = $('#fullname').val(); 
-	// $email_address = $('#email_address').val(); 
-	// $subject = $('#subject').val(); 
-	// $description = $('#description').val(); 
+	$nama_lengkap 		= $('#nama_lengkap').val();  
+	$nama_panggilan 	= $('#nama_panggilan').val();
+	$jenis_kelamin 		= $('#jenis_kelamin').val();
+	$tempat_lahir 		= $('#tempat_lahir').val();
+	$tanggal_lahir 		= $('#tanggal_lahir').val();
+	$alamat_tinggal 	= $('#alamat_tinggal').val();
+	$kota_tinggal 		= $('#kota_tinggal').val();
+	$no_handphone 		= $('#no_handphone').val();
+	$pekerjaan 			= $('#pekerjaan').val();
+	$kegiatan_gereja 	= $('#kegiatan_gereja').val();
+	$hobi_bakat 		= $('#hobi_bakat').val();
+	$dekanat 			= $('#dekanat').val();
+	$paroki 			= $('#paroki_val').val();
+	$jumlah_hari	= $('#jumlah_hari').val();
+	$kesediaan_informasi	= $('#kesediaan_informasi').val();
 
 
-	var formData = new FormData();
-	 formData.append('fullname', 'fullname'); 
-	// formData.append('email_address', $email_address); 
-	// formData.append('subject', $subject); 
-	// formData.append('description', $description); 
+	$email		= $('#email').val();
+	$password 	= $('#password').val();
 
+	$birdtype			= '1';
+	$status_aktivasi	= '0';
+	$status_peserta		= '0';
+	$status_bayar		= '0';
+	$days_count			= '0';
+
+
+	var formData = new FormData(); 
+	formData.append('nama_lengkap', $nama_lengkap);
+	formData.append('nama_panggilan', $nama_panggilan);
+	formData.append('jenis_kelamin', $jenis_kelamin);
+	formData.append('tempat_lahir', $tempat_lahir);
+	formData.append('tanggal_lahir', $tanggal_lahir);
+	formData.append('alamat_tinggal', $alamat_tinggal);
+	formData.append('kota_tinggal', $kota_tinggal);
+	formData.append('no_handphone', $no_handphone);
+	formData.append('pekerjaan', $pekerjaan);
+	formData.append('kegiatan_gereja', $kegiatan_gereja);
+	formData.append('hobi_bakat', $hobi_bakat);
+	formData.append('dekanat', $dekanat);
+	formData.append('paroki', $paroki);
+	formData.append('kesediaan_informasi', $kesediaan_informasi); 
+	formData.append('jumlah_hari', $jumlah_hari); 
+	formData.append('email', $email);
+	formData.append('password', $password);
+
+	// formData.append('birdtype', '1');
+	// formData.append('status_aktivasi','0');
+	// formData.append('status_peserta', '0');
+	// formData.append('status_bayar', '0');
+	// formData.append('days_count', '0');
 
 	$.ajax({
 		type: 'POST',

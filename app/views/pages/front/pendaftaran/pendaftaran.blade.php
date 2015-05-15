@@ -1,5 +1,10 @@
 @extends('layouts.layout')
 @section('content')	
+<style>
+	.datepicker-dropdown{
+		margin-top: 75px;
+	}
+</style>
 
 <section class="s_top_nav_cntr">
 	<div class="container-fluid">
@@ -11,162 +16,167 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-
-
-
-			{{-- $mytime = Carbon\Carbon::now(); --}}
-			<br />
-			{{-- $mytime->toDateTimeString(); --}}
-
-
-				
 				<h2>Pendaftaran</h2>  
-				<form class="form-horizontal">
+				<div class="panel panel-default">
+					<div class="panel-body">
 
-					<div class="form-group">
-						<label for="email" class="col-sm-2 control-label">Email</label>
+						<form class="form-horizontal">
+
+							<div class="form-group">
+							<label for="email" class="col-sm-3 control-label">Email</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="email" placeholder="Password">
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">Password</label>
+								<div class="col-sm-5">
+									<input type="password" class="form-control" id="password" placeholder="Password">
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="nama_lengkap" class="col-sm-3 control-label">Nama Lengkap</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="nama_lengkap" placeholder="text">
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="nama_panggilan" class="col-sm-3 control-label">Nama Panggilan</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="nama_panggilan" placeholder="text">
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="jenis_kelamin" class="col-sm-3 control-label">Jenis Kelamin</label>
+								<div class="col-sm-5">
+									<div class="radio" style="float: left;">
+										<label><input type="radio" name="gender" id="jenis_kelamin" value="1">Pria</label>
+									</div>
+									<div class="radio" style="float: left; margin-left: 40px;">
+										<label><input type="radio" name="gender" id="jenis_kelamin" value="0">Wanita</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="tempat_lahir" class="col-sm-3 control-label">Tempat Lahir</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="tempat_lahir" placeholder="text">
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="tanggal_lahir" class="col-sm-3 control-label">Tanggal Lahir</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control datepicker" id="tanggal_lahir" placeholder="text">
+								</div>
+								<script>
+									$('.datepicker').datepicker({
+										autoclose: true
+									});
+								</script>
+							</div>
+							<div class="form-group">
+							<label for="alamat_tinggal" class="col-sm-3 control-label">Alamat Tinggal</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="alamat_tinggal" placeholder="text">
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="kota_tinggal" class="col-sm-3 control-label">Kota Tinggal</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="kota_tinggal" placeholder="text">
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="no_handphone" class="col-sm-3 control-label">No. Handphone</label>
+								<div class="col-sm-5">
+									<input type="number" class="form-control" id="no_handphone" placeholder="text">
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="pekerjaan" class="col-sm-3 control-label">Pekerjaan</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="pekerjaan" placeholder="text">
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="kegiatan_gereja" class="col-sm-3 control-label">Kegiatan Gereja</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="kegiatan_gereja" placeholder="text">
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="hobi_bakat" class="col-sm-3 control-label">Hobi Bakat</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="hobi_bakat" placeholder="text">
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="paroki" class="col-sm-3 control-label">Paroki</label>
+								<div class="col-sm-5"> 
+									<select class="form-control" id="paroki" selected> 
+										<option value="0">-- pilih paroki --</option>
+										@foreach($all_paroki as $paroki) 
+										<option value="{{$paroki->nama_paroki}}" data-dekanat="{{$paroki->nama_dekanat}}">{{$paroki->nama_paroki}}</option>
+										@endforeach
+										<input type="hidden" id="paroki_val" value="">
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="dekanat" class="col-sm-3 control-label">Dekanat</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="dekanat" placeholder="--" readonly>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="jumlah_hari" class="col-sm-3 control-label">Jumlah Hari</label>
+								<div class="col-sm-5">
+									<div class="radio" style="float: left;">
+										<label><input type="radio" name="jumlah_hari" id="jumlah_hari" value="1">1</label>
+									</div>
+									<div class="radio" style="float: left; margin-left: 40px;">
+										<label><input type="radio" name="jumlah_hari" id="jumlah_hari" value="2">2</label>
+									</div>
+								</div>
+							</div>
+					<!-- <div class="form-group">
+						<label for="inputtext3" class="col-sm-3 control-label">birdtype</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="email" placeholder="Password">
+							<input type="text" class="form-control" id="inputtext3" placeholder="text">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="password" class="col-sm-2 control-label">Password</label>
+						<label for="inputtext3" class="col-sm-3 control-label">status aktivasi</label>
 						<div class="col-sm-5">
-							<input type="password" class="form-control" id="password" placeholder="Password">
+							<input type="text" class="form-control" id="inputtext3" placeholder="text">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="nama_lengkap" class="col-sm-2 control-label">Nama Lengkap</label>
+						<label for="inputtext3" class="col-sm-3 control-label">status peserta</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="nama_lengkap" placeholder="text">
+							<input type="text" class="form-control" id="inputtext3" placeholder="text">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="nama_panggilan" class="col-sm-2 control-label">Nama Panggilan</label>
+						<label for="inputtext3" class="col-sm-3 control-label">status bayar</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="nama_panggilan" placeholder="text">
+							<input type="text" class="form-control" id="inputtext3" placeholder="text">
 						</div>
-					</div>
+					</div> --> 
 					<div class="form-group">
-						<label for="jenis_kelamin" class="col-sm-2 control-label">Jenis Kelamin</label>
+						<label for="kesediaan_informasi" class="col-sm-3 control-label">Kesediaan Informasi</label>
 						<div class="col-sm-5">
 							<div class="radio" style="float: left;">
-								<label><input type="radio" name="gender" id="jenis_kelamin" value="1">Pria</label>
+							<label><input type="radio" name="kesediaan_informasi" id="kesediaan_informasi" value="1" checked="">Ya</label>
 							</div>
 							<div class="radio" style="float: left; margin-left: 40px;">
-								<label><input type="radio" name="gender" id="jenis_kelamin" value="0">Wanita</label>
+								<label><input type="radio" name="kesediaan_informasi" id="kesediaan_informasi" value="0">Tidak</label>
 							</div>
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="tempat_lahir" class="col-sm-2 control-label">Tempat Lahir</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="tempat_lahir" placeholder="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="tanggal_lahir" class="col-sm-2 control-label">Tanggal Lahir</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control datepicker" id="tanggal_lahir" placeholder="text">
-						</div>
-						<script>
-$('.datepicker').datepicker()
-</script>
-					</div>
-					<div class="form-group">
-						<label for="alamat_tinggal" class="col-sm-2 control-label">Alamat Tinggal</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="alamat_tinggal" placeholder="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="kota_tinggal" class="col-sm-2 control-label">Kota Tinggal</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="kota_tinggal" placeholder="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="no_handphone" class="col-sm-2 control-label">No. Handphone</label>
-						<div class="col-sm-5">
-							<input type="number" class="form-control" id="no_handphone" placeholder="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="pekerjaan" class="col-sm-2 control-label">Pekerjaan</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="pekerjaan" placeholder="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="kegiatan_gereja" class="col-sm-2 control-label">Kegiatan Gereja</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="kegiatan_gereja" placeholder="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="hobi_bakat" class="col-sm-2 control-label">Hobi Bakat</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="hobi_bakat" placeholder="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="paroki" class="col-sm-2 control-label">Paroki</label>
-						<div class="col-sm-5"> 
-							<select class="form-control" id="paroki" selected> 
-								<option value="0">-- pilih paroki --</option>
-								@foreach($all_paroki as $paroki) 
-								<option value="{{$paroki->nama_paroki}}" data-dekanat="{{$paroki->nama_dekanat}}">{{$paroki->nama_paroki}}</option>
-								@endforeach
-								<input type="hidden" id="paroki_val" value="">
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="dekanat" class="col-sm-2 control-label">Dekanat</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="dekanat" placeholder="--" readonly>
-						</div>
-					</div>
-
-
-					<div class="form-group">
-						<label for="jumlah_hari" class="col-sm-2 control-label">Jumlah Hari</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="jumlah_hari" placeholder="Jumlah Hari">
-						</div>
-					</div>
 					<!-- <div class="form-group">
-						<label for="inputtext3" class="col-sm-2 control-label">birdtype</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="inputtext3" placeholder="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputtext3" class="col-sm-2 control-label">status aktivasi</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="inputtext3" placeholder="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputtext3" class="col-sm-2 control-label">status peserta</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="inputtext3" placeholder="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputtext3" class="col-sm-2 control-label">status bayar</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="inputtext3" placeholder="text">
-						</div>
-					</div> -->
-					<div class="form-group">
-						<label for="kesediaan_informasi" class="col-sm-2 control-label">Kesediaan Informasi</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="kesediaan_informasi" placeholder="text">
-						</div>
-					</div>
-					<!-- <div class="form-group">
-						<label for="inputtext3" class="col-sm-2 control-label">days count</label>
+						<label for="inputtext3" class="col-sm-3 control-label">days count</label>
 						<div class="col-sm-5">
 							<input type="text" class="form-control" id="inputtext3" placeholder="text">
 						</div>
@@ -174,7 +184,7 @@ $('.datepicker').datepicker()
 
 
 
-
+					<!-- 
 
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
@@ -184,18 +194,21 @@ $('.datepicker').datepicker()
 								</label>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="button" class="btn btn-default" id="f_send_pendaftaran">Sign Up</button>
+						<div class="col-sm-offset-3 col-sm-7">
+							<button type="button" class="btn btn-primary btn-raised" id="f_send_pendaftaran">Sign Up</button>
 						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="button" class="btn btn-default" id="asdsadasd">dsasadsdaasd Up</button>
-						</div>
-					</div>
+					</div> 
 				</form>
+					</div>
+				</div>
+
+
+
+
+				
+				
 
 			</div>
 		</div>
@@ -215,7 +228,7 @@ $('body').on('change', 'select#paroki', function() {
 $('body').on('click', '#f_send_pendaftaran', function() { 
 	$nama_lengkap 		= $('#nama_lengkap').val();  
 	$nama_panggilan 	= $('#nama_panggilan').val();
-	$jenis_kelamin 		= $('#jenis_kelamin').val();
+	$jenis_kelamin 		= $('#jenis_kelamin:checked').val();
 	$tempat_lahir 		= $('#tempat_lahir').val();
 	$tanggal_lahir 		= $('#tanggal_lahir').val();
 	$alamat_tinggal 	= $('#alamat_tinggal').val();
@@ -226,18 +239,18 @@ $('body').on('click', '#f_send_pendaftaran', function() {
 	$hobi_bakat 		= $('#hobi_bakat').val();
 	$dekanat 			= $('#dekanat').val();
 	$paroki 			= $('#paroki_val').val();
-	$jumlah_hari	= $('#jumlah_hari').val();
-	$kesediaan_informasi	= $('#kesediaan_informasi').val();
+	$jumlah_hari	= $('#jumlah_hari:checked').val();
+	$kesediaan_informasi	= $('#kesediaan_informasi:checked').val();
 
 
 	$email		= $('#email').val();
 	$password 	= $('#password').val();
 
-	$birdtype			= '1';
-	$status_aktivasi	= '0';
-	$status_peserta		= '0';
-	$status_bayar		= '0';
-	$days_count			= '0';
+	// $birdtype			= '1';
+	// $status_aktivasi	= '0';
+	// $status_peserta		= '0';
+	// $status_bayar		= '0';
+	// $days_count			= '0';
 
 
 	var formData = new FormData(); 

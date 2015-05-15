@@ -49,6 +49,9 @@
 
 	<ul class="s_first_level_menu">
 		<li class="dropdown">
+			<a href="{{URL::to('/pre-event/')}}" class="" style="text-align: center; width: 160px;">Pre-event</a>
+		</li>
+		<li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">BDYD 2015 
 			</a>
 			<ul class="dropdown-menu" role="menu" style="margin-top: -5px;">

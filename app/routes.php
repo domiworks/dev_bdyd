@@ -22,7 +22,12 @@ Route::get('/bdyd-2015', function()
 {
 	return View::make('pages.front.bdyd-2015.bdyd-2015');
 	//pre-event 
-	return View::makke ('pages.front.pre-event.pre-event');
+}); 
+
+//preevent
+Route::get('/pre-event', function()
+{
+	return View::make ('pages.front.bdyd_2015.audisi_dan_lomba.pre-event');
 }); 
 
 
@@ -46,8 +51,7 @@ Route::get('/sponsor', function()
 
 //Gallery
 Route::get('/gallery', function()
-
-{
+ {
 	return View::make('pages.front.gallery.gallery');
 });
 

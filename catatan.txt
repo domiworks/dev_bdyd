@@ -1,0 +1,5 @@
+1. re-confirm password, di cek sama ga ma passwordny [v]
+2. tanggal lahir 13-35 tahun (kasih range) [v]
+3. No handphone buat apa ada drop down ya?
+4. Kesediaan infomasi dikasih comment kalo ada cursor kesana kalo ini mau dikirimkan email seputar omk ga
+5. setelah sign up, ada pop up untuk cek email (tmasuk ke dalam spam)

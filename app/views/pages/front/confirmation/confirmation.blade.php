@@ -44,13 +44,28 @@
 					<div class="form-group">
 						<label for="nama_lengkap" class="col-sm-3 control-label">Cara Pembayaran</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="nama_lengkap" placeholder="text">
+							<!-- <input type="text" class="form-control" id="nama_lengkap" placeholder="text"> -->
+							<select class="form-control" id="cara_pembayaran">
+								<option value="0">Silahkan Pilih</option>
+								<option value="Internet Banking">Internet Banking</option>
+								<option value="Transfer via ATM">Transfer via ATM</option>
+								<option value="Pembayaran Langsung via Bank">Pembayaran Langsung via Bank</option> 
+								<option value="Pembayaran Langsung Ke Panitia">Pembayaran Langsung Ke Panitia</option> 
+							</select>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="nama_panggilan" class="col-sm-3 control-label">Nama Bank Pengirim</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="nama_panggilan" placeholder="text">
+							<!-- <input type="text" class="form-control" id="nama_panggilan" placeholder="text"> -->
+							<select class="form-control" id="nama_bank_pengirim">
+								<option value="0">Silahkan Pilih</option>
+								<option value="Bank BCA">Bank BCA</option>
+								<option value="CIMB Niaga">CIMB Niaga</option>
+								<option value="Bank Mandiri">Bank Mandiri</option>
+								<option value="Bank BNI">Bank BNI</option>
+								<option value="Bank lainnya">Bank lainnya</option>
+							</select>
 						</div>
 					</div>
 					<div class="form-group">

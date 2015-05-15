@@ -16,7 +16,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<h2>Pendaftaran</h2>  
+
+				<h2>Pendaftaran</h2> 
+				{{ Carbon\Carbon::now()->toDateString()  }}
+				
+				<div class="  text-center">
+				{{ QrCode::size(151)->generate(Request::url()); }}
+					<p>Scan me to return to the original page.</p>
+				</div>
 				<div class="panel panel-default">
 					<div class="panel-body">
 
@@ -32,6 +39,12 @@
 							<label for="password" class="col-sm-3 control-label">Password</label>
 								<div class="col-sm-5">
 									<input type="password" class="form-control" id="password" placeholder="Password">
+								</div>
+							</div>
+							<div class="form-group">
+							<label for="retype_password" class="col-sm-3 control-label">Re-type Password</label>
+								<div class="col-sm-5">
+									<input type="retype_password" class="form-control" id="retype_password" placeholder="Re-type Password">
 								</div>
 							</div>
 							<div class="form-group">
@@ -66,11 +79,13 @@
 							<div class="form-group">
 							<label for="tanggal_lahir" class="col-sm-3 control-label">Tanggal Lahir</label>
 								<div class="col-sm-5">
+									<input type="hidden" id="tanggal_lahir_check" value="{{ Carbon\Carbon::now()->toDateString() }}">
 									<input type="text" class="form-control datepicker" id="tanggal_lahir" placeholder="text">
 								</div>
 								<script>
 									$('.datepicker').datepicker({
-										autoclose: true
+										autoclose: true,
+										 format: 'yyyy-mm-dd'
 									});
 								</script>
 							</div>
@@ -175,6 +190,7 @@
 							</div>
 						</div>
 					</div>
+
 					<!-- <div class="form-group">
 						<label for="inputtext3" class="col-sm-3 control-label">days count</label>
 						<div class="col-sm-5">
@@ -223,76 +239,97 @@ $('body').on('change', 'select#paroki', function() {
     
 
   });
-  
+
+function parseDate(str)
+{
+	var s = str.split(" "),
+	d = s[0].split("-"),
+	t = s[1].replace(/:/g, "");
+	return d[2] + d[1] + d[0];
+}
 
 $('body').on('click', '#f_send_pendaftaran', function() { 
-	$nama_lengkap 		= $('#nama_lengkap').val();  
-	$nama_panggilan 	= $('#nama_panggilan').val();
-	$jenis_kelamin 		= $('#jenis_kelamin:checked').val();
-	$tempat_lahir 		= $('#tempat_lahir').val();
-	$tanggal_lahir 		= $('#tanggal_lahir').val();
-	$alamat_tinggal 	= $('#alamat_tinggal').val();
-	$kota_tinggal 		= $('#kota_tinggal').val();
-	$no_handphone 		= $('#no_handphone').val();
-	$pekerjaan 			= $('#pekerjaan').val();
-	$kegiatan_gereja 	= $('#kegiatan_gereja').val();
-	$hobi_bakat 		= $('#hobi_bakat').val();
-	$dekanat 			= $('#dekanat').val();
-	$paroki 			= $('#paroki_val').val();
-	$jumlah_hari	= $('#jumlah_hari:checked').val();
-	$kesediaan_informasi	= $('#kesediaan_informasi:checked').val();
+	// alert($('#tanggal_lahir').val() - $('#tanggal_lahir_check').val() );
 
 
-	$email		= $('#email').val();
-	$password 	= $('#password').val();
-
-	// $birdtype			= '1';
-	// $status_aktivasi	= '0';
-	// $status_peserta		= '0';
-	// $status_bayar		= '0';
-	// $days_count			= '0';
-
-
-	var formData = new FormData(); 
-	formData.append('nama_lengkap', $nama_lengkap);
-	formData.append('nama_panggilan', $nama_panggilan);
-	formData.append('jenis_kelamin', $jenis_kelamin);
-	formData.append('tempat_lahir', $tempat_lahir);
-	formData.append('tanggal_lahir', $tanggal_lahir);
-	formData.append('alamat_tinggal', $alamat_tinggal);
-	formData.append('kota_tinggal', $kota_tinggal);
-	formData.append('no_handphone', $no_handphone);
-	formData.append('pekerjaan', $pekerjaan);
-	formData.append('kegiatan_gereja', $kegiatan_gereja);
-	formData.append('hobi_bakat', $hobi_bakat);
-	formData.append('dekanat', $dekanat);
-	formData.append('paroki', $paroki);
-	formData.append('kesediaan_informasi', $kesediaan_informasi); 
-	formData.append('jumlah_hari', $jumlah_hari); 
-	formData.append('email', $email);
-	formData.append('password', $password);
-
-	// formData.append('birdtype', '1');
-	// formData.append('status_aktivasi','0');
-	// formData.append('status_peserta', '0');
-	// formData.append('status_bayar', '0');
-	// formData.append('days_count', '0');
-
-	$.ajax({
-		type: 'POST',
-		url: "{{URL('post_pendaftaran')}}",
-		data: formData, 
-		processData: false,
-		contentType: false,				
-		success: function(response) { 
-			alert(response); 
-		},
-		error: function(xhr, textStatus, errorThrown) {
-			alert("readyState: "+xhr.readyState+"\nstatus: "+xhr.status);
-			alert("responseText: "+xhr.responseText);
-		}
-	});
+	if( parseDate("17-05-1989 12:15:00") > parseDate("15-05-1989 14:00:00") )
+	{
+		alert("larger");
+	}
+	else
+	{
+		alert("smaller");  
+	}
 });
+
+// $('body').on('click', '#f_send_pendaftaran', function() { 
+// 	$nama_lengkap 		= $('#nama_lengkap').val();  
+// 	$nama_panggilan 	= $('#nama_panggilan').val();
+// 	$jenis_kelamin 		= $('#jenis_kelamin:checked').val();
+// 	$tempat_lahir 		= $('#tempat_lahir').val();
+// 	$tanggal_lahir 		= $('#tanggal_lahir').val();
+// 	$alamat_tinggal 	= $('#alamat_tinggal').val();
+// 	$kota_tinggal 		= $('#kota_tinggal').val();
+// 	$no_handphone 		= $('#no_handphone').val();
+// 	$pekerjaan 			= $('#pekerjaan').val();
+// 	$kegiatan_gereja 	= $('#kegiatan_gereja').val();
+// 	$hobi_bakat 		= $('#hobi_bakat').val();
+// 	$dekanat 			= $('#dekanat').val();
+// 	$paroki 			= $('#paroki_val').val();
+// 	$jumlah_hari	= $('#jumlah_hari:checked').val();
+// 	$kesediaan_informasi	= $('#kesediaan_informasi:checked').val();
+
+
+// 	$email		= $('#email').val();
+// 	$password 	= $('#password').val();
+
+// 	// $birdtype			= '1';
+// 	// $status_aktivasi	= '0';
+// 	// $status_peserta		= '0';
+// 	// $status_bayar		= '0';
+// 	// $days_count			= '0';
+
+
+// 	var formData = new FormData(); 
+// 	formData.append('nama_lengkap', $nama_lengkap);
+// 	formData.append('nama_panggilan', $nama_panggilan);
+// 	formData.append('jenis_kelamin', $jenis_kelamin);
+// 	formData.append('tempat_lahir', $tempat_lahir);
+// 	formData.append('tanggal_lahir', $tanggal_lahir);
+// 	formData.append('alamat_tinggal', $alamat_tinggal);
+// 	formData.append('kota_tinggal', $kota_tinggal);
+// 	formData.append('no_handphone', $no_handphone);
+// 	formData.append('pekerjaan', $pekerjaan);
+// 	formData.append('kegiatan_gereja', $kegiatan_gereja);
+// 	formData.append('hobi_bakat', $hobi_bakat);
+// 	formData.append('dekanat', $dekanat);
+// 	formData.append('paroki', $paroki);
+// 	formData.append('kesediaan_informasi', $kesediaan_informasi); 
+// 	formData.append('jumlah_hari', $jumlah_hari); 
+// 	formData.append('email', $email);
+// 	formData.append('password', $password);
+
+// 	// formData.append('birdtype', '1');
+// 	// formData.append('status_aktivasi','0');
+// 	// formData.append('status_peserta', '0');
+// 	// formData.append('status_bayar', '0');
+// 	// formData.append('days_count', '0');
+
+// 	$.ajax({
+// 		type: 'POST',
+// 		url: "{{URL('post_pendaftaran')}}",
+// 		data: formData, 
+// 		processData: false,
+// 		contentType: false,				
+// 		success: function(response) { 
+// 			alert(response); 
+// 		},
+// 		error: function(xhr, textStatus, errorThrown) {
+// 			alert("readyState: "+xhr.readyState+"\nstatus: "+xhr.status);
+// 			alert("responseText: "+xhr.responseText);
+// 		}
+// 	});
+// });
 </script>
 
 

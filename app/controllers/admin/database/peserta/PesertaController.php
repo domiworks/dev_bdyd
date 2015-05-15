@@ -153,6 +153,9 @@ class PesertaController extends BaseController {
 		}
 
 		$new_pendaftar->id_pendaftaran 		= $randomString;
+
+		//cek nama
+		// $known_name = Peserta::where('nama_lengkap','')
  
 
 		// $tralala = 'admin';
@@ -231,6 +234,7 @@ class PesertaController extends BaseController {
 
 
 			// return $email_admin[0]->username;
+			//nama, tanggal lahir, paroki
 			return $email_address;
 		}
 		catch(Exception $e){

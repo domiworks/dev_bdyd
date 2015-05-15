@@ -37,7 +37,7 @@
 			<div class="col-xs-10 col-xs-push-1">
 				
 				<h2>Pre-Event</h2>
-				<p><b>Bagaimana cara mendaftar pre-event ?</b></p>
+				<p><b><a>Bagaimana cara mendaftar pre-event ?</b></p>
 				<p>
 				</p>
 			</div>

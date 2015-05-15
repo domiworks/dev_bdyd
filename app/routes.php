@@ -20,31 +20,35 @@ Route::get('/', function()
 //BDYD 2015
 Route::get('/bdyd-2015', function()
 {
-	return View::make('pages.front.bdyd_2015.home');
+	return View::make('pages.front.bdyd-2015.bdyd-2015');
+	//pre-event 
+	return View::makke ('pages.front.pre-event.pre-event');
 }); 
+
 
 //About BDYD 2015
 Route::get('/about-bdyd', function()
 {
-	return View::make('pages.front.bdyd_2015.home');
+	return View::make('pages.front.about-bdyd.about-bdyd');
 });
 
 //Past BDYD 2015
 Route::get('/past-bdyd', function()
 {
-	return View::make('pages.front.home.home');
+	return View::make('pages.front.past-bdyd.past-bdyd');
 });
 
 //Sponsor dan Donatur
-Route::get('/sponsor-donatur', function()
+Route::get('/sponsor', function()
 {
-	return View::make('pages.front.home.home');
+	return View::make('pages.front.sponsor.sponsor');
 });
 
 //Gallery
 Route::get('/gallery', function()
+
 {
-	return View::make('pages.front.home.home');
+	return View::make('pages.front.gallery.gallery');
 });
 
 /*

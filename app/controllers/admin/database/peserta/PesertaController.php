@@ -6,9 +6,7 @@ class PesertaController extends BaseController {
 
 
 	
-	public function create_user(){
- 
-
+	public function create_user(){ 
 
 		$nama_lengkap 		= Input::get('nama_lengkap');
 		$nama_panggilan 	= Input::get('nama_panggilan');
@@ -30,7 +28,7 @@ class PesertaController extends BaseController {
 		$email		= Input::get('email');
 		$password 	= Input::get('password');
  
-		$birdtype			= '1';
+		$birdtype			= '';
 		$status_aktivasi	= '0';
 		$status_peserta		= '0';
 		$status_bayar		= '0';
@@ -55,22 +53,28 @@ class PesertaController extends BaseController {
 		if($jumlah_hari == 1){ //daytype
 			if($kota_bandung == 'bandung'){ //dalam kota
 				if(($tb1_start < $current_time) && ($current_time < $tb1_end)){ // bird 1
-					$price = '20000';
+					$price = '20000';		
+					$birdtype = '1'; 
 				}elseif(($tb2_start < $current_time) && ($current_time < $tb2_end)){ //bird 2
 					$price = '30000';
+					$birdtype = '2';
 				}elseif(($tb3_start < $current_time) && ($current_time < $tb3_end)){ //bird 3
 					$price = '50000';
+					$birdtype = '3';
 				}else{
 					$price = ' gak masuk bandung 1';
 				}
 				// $price = 'bandung 1';
 			}else{ // luar kota
 				if(($tb1_start < $current_time) && ($current_time < $tb1_end)){ // bird 1
-					$price = '20000';
+					$price = '20000';	
+					$birdtype = '1'; 
 				}elseif(($tb2_start < $current_time) && ($current_time < $tb2_end)){ //bird 2
-					$price = '30000';
+					$price = '30000';	
+					$birdtype = '2'; 
 				}elseif(($tb3_start < $current_time) && ($current_time < $tb3_end)){ //bird 3
-					$price = '50000';
+					$price = '50000';	
+					$birdtype = '3'; 
 				}else{
 					$price = ' gak masuk luar bandung 1';
 				}
@@ -79,22 +83,28 @@ class PesertaController extends BaseController {
 		}elseif($jumlah_hari == 2){ //daytype
 			if($kota_bandung == 'bandung'){ //dalam kota
 				if(($tb1_start < $current_time) && ($current_time < $tb1_end)){ // bird 1
-					$price = '100000';
+					$price = '100000';	
+					$birdtype = '1'; 
 				}elseif(($tb2_start < $current_time) && ($current_time < $tb2_end)){ //bird 2
-					$price = '125000';
+					$price = '125000';	
+					$birdtype = '2'; 
 				}elseif(($tb3_start < $current_time) && ($current_time < $tb3_end)){ //bird 3
-					$price = '150000';
+					$price = '150000';	
+					$birdtype = '3'; 
 				}else{
 					$price = ' gak masuk bandung 2';
 				}
 				// $price = 'bandung 2';
 			}else{ // luar kota
 				if(($tb1_start < $current_time) && ($current_time < $tb1_end)){ // bird 1
-					$price = '75000';
+					$price = '75000';	
+					$birdtype = '1'; 
 				}elseif(($tb2_start < $current_time) && ($current_time < $tb2_end)){ //bird 2
-					$price = '100000';
+					$price = '100000';	
+					$birdtype = '2'; 
 				}elseif(($tb3_start < $current_time) && ($current_time < $tb3_end)){ //bird 3
-					$price = '150000';
+					$price = '150000';	
+					$birdtype = '3'; 
 				}else{
 					$price = ' gak masuk luar bandung 2';
 				}
@@ -134,11 +144,31 @@ class PesertaController extends BaseController {
 		$new_pendaftar->price 				= $price;
 
 
+		$length = 10;
+		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$charactersLength = strlen($characters);
+		$randomString = '';
+		for ($i = 0; $i < $length; $i++) {
+			$randomString .= $characters[rand(0, $charactersLength - 1)];
+		}
+
+		$new_pendaftar->id_pendaftaran 		= $randomString;
+ 
+
+		// $tralala = 'admin';
+		// $trilili = Hash::make('admin');
+		// $trololo = '';
+
+		// if(Hash::check($tralala,$trilili)){
+		// 	$trololo = "1";
+		// }
+
 		try{
 			$new_pendaftar->save();
  
+ 			//kirim ke pendaftar
 			$email_address = $email; 
-			$to = "sesuatu@sesuatu.com";
+			$to = $email_address;
 			$subject = "Pendaftaran BDYD";
 
 			$headers = "From: ".$email_address."\r\n";
@@ -147,16 +177,69 @@ class PesertaController extends BaseController {
 			$headers .= "MIME-Version: 1.0\r\n";
 			$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-			$message = "daftar bray"; 
-			mail($to,$subject,$message,$headers,'-fsesuatu@sesuatu.com');	
+			$message = "Pendaftaran BDYD<br/>";  
+			$message .= "ID: ".$nama_lengkap."<br/>";
+			$message .= "ID: ".$nama_panggilan."<br/>";
+			$message .= "ID: ".$jenis_kelamin."<br/>";
+			$message .= "ID: ".$tempat_lahir."<br/>";
+			$message .= "ID: ".$tanggal_lahir."<br/>";
+			$message .= "ID: ".$alamat_tinggal."<br/>";
+			$message .= "ID: ".$kota_tinggal."<br/>";
+			$message .= "ID: ".$no_handphone."<br/>";
+			$message .= "ID: ".$pekerjaan."<br/>";
+			$message .= "ID: ".$kegiatan_gereja 	."<br/>";
+			$message .= "ID: ".$hobi_bakat."<br/>";
+			$message .= "ID: ".$dekanat."<br/>";
+			$message .= "ID: ".$paroki."<br/>";
+			$message .= "ID: ".$kesediaan_informasi."<br/>";
 
 
-			return 'User is successfully created.';
+
+			mail($to,$subject,$message,$headers,'-f'.$email_address);	
+
+			$email_admin= Admin::all();
+
+
+			//kirim ke pantia
+			$email_address = $email; 
+			$to = "peijumastery@hotmail.com";
+			$subject = "Pendaftaran BDYD";
+
+			$headers = "From: ".$email_address."\r\n";
+			$headers .= "Reply-To: ".$email_address."\r\n";
+			$headers .= "Return-Path: ".$email_address."\r\n";
+			$headers .= "MIME-Version: 1.0\r\n";
+			$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+			$message = "Pendaftaran BDYD<br/>";  
+			$message .= "ID: ".$nama_lengkap."<br/>";
+			$message .= "ID: ".$nama_panggilan."<br/>";
+			$message .= "ID: ".$jenis_kelamin."<br/>";
+			$message .= "ID: ".$tempat_lahir."<br/>";
+			$message .= "ID: ".$tanggal_lahir."<br/>";
+			$message .= "ID: ".$alamat_tinggal."<br/>";
+			$message .= "ID: ".$kota_tinggal."<br/>";
+			$message .= "ID: ".$no_handphone."<br/>";
+			$message .= "ID: ".$pekerjaan."<br/>";
+			$message .= "ID: ".$kegiatan_gereja 	."<br/>";
+			$message .= "ID: ".$hobi_bakat."<br/>";
+			$message .= "ID: ".$dekanat."<br/>";
+			$message .= "ID: ".$paroki."<br/>";
+			$message .= "ID: ".$kesediaan_informasi."<br/>";
+
+			mail($to,$subject,$message,$headers,'-fpeijumastery@hotmail.com');	
+
+
+			return $email_admin[0]->username;
 		}
 		catch(Exception $e){
 			return $e;
 		}
  
+	}
+
+	public function confirm_registration() {
+		return 'confirm registration';
 	}	
 
 

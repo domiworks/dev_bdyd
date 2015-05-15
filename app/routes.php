@@ -58,9 +58,19 @@ Route::get('/gallery', function()
 */
 
 //page pendaftaran 
-Route::get('/pendaftaran', ['as'=>'categoryList', 'uses'=>'PendaftaranFrontController@view_pendaftaran']);
+Route::get('/pendaftaran', ['as'=>'tamu.page_pendaftaran', 'uses'=>'PendaftaranFrontController@view_pendaftaran']);
 
 //funtion ke engine
  Route::post('/post_pendaftaran', ['as'=>'tamu.post_pendaftaran', 'uses'=>'PesertaController@create_user']);
+
+
+/*
+|--------------------------------------------------------------------------
+|	Konfirmasi
+|--------------------------------------------------------------------------
+*/
+
+// page konfirmasi
+Route::get('/konfirmasi', ['as'=>'tamu.page_konfirmasi', 'uses'=>'PendaftaranFrontController@view_konfirmasi']);
 
 

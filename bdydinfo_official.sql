@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2015 at 02:13 PM
+-- Generation Time: May 15, 2015 at 01:46 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.5.19
 
@@ -32,7 +32,15 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`, `created_at`, `updated_at`) VALUES
+(1, 'domiworks@gmail.com', '$2y$10$0CGIjzPtPnju7dQJeBQPGe44PSHcRxQ88WZwIqy3BTuWyh0AKiBWy', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'dikomunikasikan@gmail.com', '$2y$10$0CGIjzPtPnju7dQJeBQPGe44PSHcRxQ88WZwIqy3BTuWyh0AKiBWy', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -138,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `peserta` (
   `price` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `peserta`
@@ -167,7 +175,19 @@ INSERT INTO `peserta` (`id`, `id_pendaftaran`, `email`, `password`, `nama_lengka
 (25, '', '42352352352', '$2y$10$/VH7FaVhk5jSZvtRRwnfNeqoA033tpq6jjLV8hGzdraFamLUWonSC', '42352352352', '42352352352', '0000-00-00', '42352352352', 127, '42352352352', 'Bandung', 2147483647, '42352352352', '42352352352', '42352352352', 'Katabapa		', 'Karawang / Kristus Raja										', 1, 1, 0, 0, 0, 1, 0, ' gak masuk bandung 1', '2015-05-13 19:09:24', '2015-05-13 19:09:24'),
 (26, '', '23456789', '$2y$10$L.6l7wmOU4JHn4.e91D1cOMMNBqaBz8dxWrqq23V0zOshx2q7R3z2', '23456789', '23456789', '0000-00-00', '23456789', 127, '23456789', 'bANDUNG', 0, '23456789', '23456789', '23456789', 'Dasamawartoba', 'Paroki Dayeuh Kolot											', 2, 1, 0, 0, 0, 1, 0, '100000', '2015-05-13 19:12:16', '2015-05-13 19:12:16'),
 (27, '', '23456789', '$2y$10$ekDNbYljAoWqURxLB0sQp.os3dmxcUTPJzjFRoDNaO3MqBNhNFS/2', '23456789', '23456789', '0000-00-00', '23456789', 127, '23456789', 'jakahuiegr', 0, '23456789', '23456789', '23456789', 'Dasamawartoba', 'Paroki Dayeuh Kolot											', 2, 1, 0, 0, 0, 1, 0, '75000', '2015-05-13 19:12:57', '2015-05-13 19:12:57'),
-(28, '', '23456789', '$2y$10$NkiIG7kaV/2V6eGtDRAYGOUi0tYNkSPeP2CqkS0WtpaY/fkHsxlWe', '23456789', '23456789', '0000-00-00', '23456789', 127, '23456789', 'jakahuiegr', 0, '23456789', '23456789', '23456789', 'Dasamawartoba', 'Paroki Dayeuh Kolot											', 1, 1, 0, 0, 0, 1, 0, '20000', '2015-05-13 19:13:16', '2015-05-13 19:13:16');
+(28, '', '23456789', '$2y$10$NkiIG7kaV/2V6eGtDRAYGOUi0tYNkSPeP2CqkS0WtpaY/fkHsxlWe', '23456789', '23456789', '0000-00-00', '23456789', 127, '23456789', 'jakahuiegr', 0, '23456789', '23456789', '23456789', 'Dasamawartoba', 'Paroki Dayeuh Kolot											', 1, 1, 0, 0, 0, 1, 0, '20000', '2015-05-13 19:13:16', '2015-05-13 19:13:16'),
+(29, '', '123456789', '$2y$10$FbkqbXkSBUWOkTMKDo/i/OH2mY8pbyL9vFUepA6v7Y9vqTxJpdzAa', '123456789', '123456789', '0000-00-00', '123456789', 1, '123456789', '123456789', 123456789, '123456789', '123456789', '123456789', 'Katabapa		', 'Subang / Kristus Sang Penabur								', 1, 1, 0, 0, 0, 1, 0, '20000', '2015-05-13 19:36:11', '2015-05-13 19:36:11'),
+(30, '', '123456789', '$2y$10$8Ho5iTXetomq7HwOTdi0l.TTLjzw2GlN9HlrF0zlEdiqHe6QmDv6S', '123456789', '123456789', '0000-00-00', '123456789', 1, '123456789', '123456789', 123456789, '123456789', '123456789', '123456789', 'Katabapa		', 'Subang / Kristus Sang Penabur								', 1, 1, 0, 0, 0, 1, 0, '20000', '2015-05-13 19:36:36', '2015-05-13 19:36:36'),
+(31, '', '234567', '$2y$10$qU1b3WhxzZuQK9ibb4kkE.y8umfL36Fj9z/6kocJNiQkuoZqE1l2y', '234567', '234567', '0000-00-00', '234567', 1, '234567', '234567', 234567, '234567', '234567', '234567', 'Katabapa		', 'Pamanukan / Maria Bunda Pembantu Abadi						', 1, 1, 0, 0, 0, 1, 0, '20000', '2015-05-14 11:19:26', '2015-05-14 11:19:26'),
+(32, '', '456789', '$2y$10$vgrkrn2/W8v6T5.y3yVikubc1AvL7wlN5EBV9B7PaT8WFTwQnAzEW', '456789', '456789', '0000-00-00', '456789', 1, '456789', '456789', 456789, '456789', '456789', '456789', 'Tasciciayu	', 'Cigugur / Kristus Raja										', 1, 1, 0, 0, 0, 1, 0, '20000', '2015-05-14 11:27:20', '2015-05-14 11:27:20'),
+(33, '', '123456789', '$2y$10$S1ohhQnx4.zhXIM1WC1Quug65Ixw.AhZryF6JwOuH57DCokM/JVMS', '123456789', '123456789', '0000-00-00', '123456789', 1, '123456789', '123456789', 123456789, '123456789', '123456789', '123456789', 'Palemsuci	', 'Sukajadi / Laurentius 										', 1, 1, 0, 0, 0, 1, 0, '20000', '2015-05-14 11:40:01', '2015-05-14 11:40:01'),
+(34, 'p5xvsyrCzl', '2345678', '$2y$10$V9fJt7aU.JAmW5A5CpbiOeJY4W7pdBTlKxBT8NHOvtWaWYkwTSMsO', '2345678', '2345678', '0000-00-00', '2345678', 1, '2345678', '2345678', 2345678, '2345678', '2345678', '2345678', 'Katabapa		', 'Pamanukan / Maria Bunda Pembantu Abadi						', 1, 1, 0, 0, 0, 1, 0, '20000', '2015-05-15 16:17:09', '2015-05-15 16:17:09'),
+(35, 'dsa', '2345678', '$2y$10$bEEuRC3LXz8e4Ol9WW4IQOOm367Oq0XWOHTT4gri7wzHimBd/hvNa', '2345678', '2345678', '0000-00-00', '2345678', 1, '2345678', '2345678', 2345678, '2345678', '2345678', '2345678', 'Katabapa		', 'Pamanukan / Maria Bunda Pembantu Abadi						', 1, 1, 0, 0, 0, 1, 0, '20000', '2015-05-15 16:18:40', '2015-05-15 16:18:40'),
+(36, '6reoIROo0j', '23457', '$2y$10$oYlnrxEDUg7YjEUBk5wFJ.uRPMZGPSR9t2SmsB02/12wKaXwHassO', '23457', '23457', '0000-00-00', '23457', 1, '23457', '23457', 23457, '23457', '23457', '23457', 'Katabapa		', 'Purwakarta / Salib Suci										', 1, 1, 0, 0, 0, 1, 0, '20000', '2015-05-15 16:23:47', '2015-05-15 16:23:47'),
+(37, '9i1oFrKEGz', 'jumlah_hari', '$2y$10$j377ppDru7/xTn.7Rxz0de0gd0ZJU2ZqCqw3doRZ7sjJAdByOSG.i', 'jumlah_hari', 'jumlah_hari', '0000-00-00', 'jumlah_hari', 1, 'jumlah_hari', 'jumlah_hari', 0, 'jumlah_hari', 'jumlah_hari', 'jumlah_hari', 'Katabapa		', 'Pamanukan / Maria Bunda Pembantu Abadi						', 1, 1, 0, 0, 0, 1, 0, '20000', '2015-05-15 16:24:54', '2015-05-15 16:24:54'),
+(38, 'OtKezCZy4q', ':selected', '$2y$10$tJIXat02q30fMCcNiuxr8OLevbk3GgtTeyB7xwtS9CmPO.8uteGg2', ':selected', ':selected', '0000-00-00', ':selected', 0, ':selected', ':selected', 0, ':selected', ':selected', ':selected', 'Katabapa		', 'Subang / Kristus Sang Penabur								', 0, 1, 0, 0, 0, 2, 0, '', '2015-05-15 16:25:53', '2015-05-15 16:25:53'),
+(39, 'mTtNK09F0q', 'checked', '$2y$10$/KPWrhAAvjF4y9UIAoo0AuhlBRV27ahYt/AUoaM.NnxTF200/H4Xy', 'checked', 'checked', '0000-00-00', 'checked', 0, 'checked', 'checked', 0, 'checked', 'checked', 'checked', 'Dasamawartoba', 'Buah Batu / Hati Tak Bernoda Santa Perawan Maria				', 2, 1, 0, 0, 0, 1, 0, '75000', '2015-05-15 16:27:05', '2015-05-15 16:27:05'),
+(40, 'H8tCaqZzbh', ':checked', '$2y$10$VFL2C5qK0h1fHyTCV1qLn.j7XY62xDP24NFKTrL5nMaYEhtVUEUCu', ':checked', ':checked', '0000-00-00', ':checked', 0, ':checked', ':checked', 0, ':checked', ':checked', ':checked', 'Dasamawartoba', 'Paroki Dayeuh Kolot											', 2, 1, 0, 0, 0, 0, 0, '75000', '2015-05-15 16:47:38', '2015-05-15 16:47:38');
 
 -- --------------------------------------------------------
 
@@ -245,7 +265,7 @@ ALTER TABLE `price`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `paroki`
 --
@@ -255,7 +275,7 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 -- AUTO_INCREMENT for table `peserta`
 --
 ALTER TABLE `peserta`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
 --
 -- AUTO_INCREMENT for table `price`
 --

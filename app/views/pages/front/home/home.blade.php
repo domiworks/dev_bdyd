@@ -4,6 +4,8 @@
 <section class="s_top_nav_cntr">
 	<div class="container-fluid">
 		@include('navigations.front')
+		
+
 
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -13,6 +15,7 @@
     <li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
   </ol>
+  
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
@@ -43,10 +46,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>	
-
-
-
-
 	</div>
 </section>
 
@@ -80,8 +79,15 @@
 		<div class="row">
 			<div class="col-xs-10 col-xs-push-1">
 				
+<<<<<<< HEAD
 			
 				
+=======
+				<h2>Pre-Event</h2>
+				<p><b><a>Bagaimana cara mendaftar pre-event ?</b></p>
+				<p>
+				</p>
+>>>>>>> c39ce48d600a4681efa804015eef746b2421b78d
 			</div>
 		</div>
 	</div>

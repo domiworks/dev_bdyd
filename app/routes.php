@@ -24,10 +24,10 @@ Route::get('/bdyd-2015', function()
 	//pre-event 
 }); 
 
-//preevent
-Route::get('/pre-event', function()
+//audisi_dan_lomba
+Route::get('/audisi_dan_lomba', function()
 {
-	return View::make ('pages.front.bdyd_2015.audisi_dan_lomba.pre-event');
+	return View::make('pages.front.bdyd_2015.audisi_dan_lomba.audisi_dan_lomba');
 }); 
 
 

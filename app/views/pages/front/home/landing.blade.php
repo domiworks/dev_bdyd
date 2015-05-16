@@ -1,6 +1,6 @@
 <section class="s_landing_cntr">
 	<div class="container">
-		<div class="row">
+		<div class="center">
 			<div class="col-xs-12">
 				landing
 			</div>
@@ -8,7 +8,7 @@
 	</div>
 	<div class="s_tbl">
 		<div class="s_cell"> 
-			<svg version="1.1" id="Layer_1" height="100px" viewBox="0 0 540.078186 355.6210022"
+			<!-- <svg version="1.1" id="Layer_1" height="100px" viewBox="0 0 540.078186 355.6210022"
 				style="enable-background:new 0 0 540.078186 355.6210022;" xml:space="preserve">
 				<g>
 					<g>
@@ -131,7 +131,7 @@
 						C384.9130859,314.2098999,384.8876953,315.1943054,384.2901001,316.3211975"/>
 					</g>
 				</g>
-			</svg>
+			</svg> -->
 		</div>
 	</div>
 

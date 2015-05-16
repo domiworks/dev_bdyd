@@ -2,12 +2,13 @@
 @section('content')	
 
 <section class="s_top_nav_cntr">
+	<secition class="s_"
 	<div class="container-fluid">
 		@include('navigations.front')
 		
 
 
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 60vh;">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -20,19 +21,19 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="4.jpg" alt="OMK">
+      <img src="{{ asset('assets/img/4.jpg') }}" alt="OMK" style="heigth: 60vh;">
     </div>
 
     <div class="item">
-      <img src="4.jpg" alt="OMK">
+      <img src="{{ asset('assets/img/.jpg') }}" alt="OMK">
     </div>
 
     <div class="item">
-      <img src="4.jpg" alt="OMK">
+      <img src="{{ asset('assets/img/.jpg') }}" alt="OMK">
     </div>
 
     <div class="item">
-      <img src="4.jpg" alt="OMK">
+      <img src="{{ asset('assets/img/.jpg') }}" alt="OMK">
     </div>
   </div>
 
@@ -79,19 +80,4 @@
 		<div class="row">
 			<div class="col-xs-10 col-xs-push-1">
 				
-<<<<<<< HEAD
-			
-				
-=======
-				<h2>Pre-Event</h2>
-				<p><b><a>Bagaimana cara mendaftar pre-event ?</b></p>
-				<p>
-				</p>
->>>>>>> c39ce48d600a4681efa804015eef746b2421b78d
-			</div>
-		</div>
-	</div>
-</section>
-
-
 @stop

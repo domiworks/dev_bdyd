@@ -49,7 +49,7 @@
 
 	<ul class="s_first_level_menu">
 		<li class="dropdown">
-			<a href="{{URL::to('/pre-event/')}}" class="" style="text-align: center; width: 160px;">Pre-event</a>
+			<a href="{{URL::to('/audisi_dan_lomba/')}}" class="" style="text-align: center; width: 160px;">Audisi dan Lomba</a>
 		</li>
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">BDYD 2015 
@@ -122,7 +122,7 @@
 	</ul>
 </div>
 </div>
-<script>
+<!--<script>
 	(function ($, window, delay) {
   // http://jsfiddle.net/AndreasPizsa/NzvKC/
   var theTimer = 0;

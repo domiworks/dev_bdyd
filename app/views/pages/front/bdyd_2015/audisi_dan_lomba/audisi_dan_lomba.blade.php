@@ -13,10 +13,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-10 col-xs-push-1">
-				
-				<h2>AUDISI BAND </h2>
-				
-				
+
+			<h2>Pre vent</h2>				
+				Contact Person    : Evelyn 08974168238 <BR>
+				Link Pendaftaran  :<a href="http://bit.ly/bdyd2015_audisi_band"> bit.ly/bdyd2015_audisi_band</a><br>
+				Tanggal Audisi : Minggu, 5 Juli 2015 <br><br>
+
+				<h2>AUDISI BAND</h2>				
 				Contact Person    : Evelyn 08974168238 <BR>
 				Link Pendaftaran  :<a href="http://bit.ly/bdyd2015_audisi_band"> bit.ly/bdyd2015_audisi_band</a><br>
 				Tanggal Audisi : Minggu, 5 Juli 2015 <br><br>
@@ -219,6 +222,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 </section>
 
 

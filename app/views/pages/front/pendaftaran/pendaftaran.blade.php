@@ -508,6 +508,11 @@ $('body').on('click', '#f_send_pendaftaran', function() {
 	// 	$('.f_retype_password_er').css('display','block');
 	// }
 
+	function validateEmail(email) {
+   		var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+   		return re.test(email);	
+	}
+
 	if(
 		($nama_lengkap != null) && ($nama_lengkap != '') &&
 		($nama_panggilan != null) && ($nama_panggilan != '') &&
@@ -523,7 +528,7 @@ $('body').on('click', '#f_send_pendaftaran', function() {
 		($dekanat != null) && ($dekanat != '') &&
 		($paroki != null) && ($paroki != '') &&
 		($jumlah_hari != null) && ($jumlah_hari != '') &&
-		($email != null) && ($email != '')
+		($email != null) && ($email != '') && (validateEmail($email) != false)
 		// ($password != null) && ($password != '') 
 		// ($('#password').val() != $('#retype_password').val())
 		){

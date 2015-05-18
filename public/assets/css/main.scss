@@ -127,3 +127,9 @@ p {
 	display: block;
 	position: relative;
 }
+
+#no_handphone {
+	&:before {
+		content: "Read this: ";
+	}
+}

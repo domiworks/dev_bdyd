@@ -2,7 +2,6 @@
 @section('content')	
 
 <section class="s_top_nav_cntr">
-	<secition class="s_"
 	<div class="container-fluid">
 		@include('navigations.front')
 		
@@ -21,7 +20,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="{{ asset('assets/img/4.jpg') }}" alt="OMK" style="heigth: 60vh;">
+      <img src="{{ asset('assets/img/.jpg') }}" alt="OMK" style="heigth: 60vh;">
     </div>
 
     <div class="item">

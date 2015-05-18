@@ -11,6 +11,11 @@
 			public function view_konfirmasi(){ 
 				// $all_paroki = ParokiController::get_all_paroki();
 				return View::make('pages.front.confirmation.confirmation');
+			}			
+
+			public function view_all_peserta(){ 
+				// $all_paroki = ParokiController::get_all_paroki();
+				return View::make('pages.front.confirmation.confirmation');
 			}
 
 	}

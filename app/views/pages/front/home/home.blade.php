@@ -1,8 +1,7 @@
 @extends('layouts.layout')
 @section('content')	
 
-<section class="s_top_nav_cntr">
-	<secition class="s_"
+<section class="s_top_nav_cntr"> 
 	<div class="container-fluid">
 		@include('navigations.front')
 		

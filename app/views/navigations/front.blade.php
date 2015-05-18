@@ -51,7 +51,7 @@
 		<li class="dropdown">
 			<a href="{{URL::to('/audisi_dan_lomba/')}}" class="" style="text-align: center; width: 160px;">Audisi dan Lomba</a>
 		</li>
-		<li class="dropdown">
+<!-- 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">BDYD 2015 
 			</a>
 			<ul class="dropdown-menu" role="menu" style="margin-top: -5px;">
@@ -79,8 +79,8 @@
 					<a href="" class="" style="text-align: center; width: 160px;">Doa BDYD 2015</a>
 				</li> 
 			</ul>
-		</li>
-		<li class="dropdown">
+		</li> -->
+		<!-- <li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">About BDYD 
 			</a>
 			<ul class="dropdown-menu" role="menu" style="margin-top: -5px;">
@@ -96,8 +96,8 @@
 					<a href="" class="" style="text-align: center; width: 160px;">Theme Song BDYD</a>
 				</li> 
 			</ul>
-		</li>
-		<li class="dropdown">
+		</li> -->
+		<!-- <li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Past BDYD 
 			</a>
 			<ul class="dropdown-menu" role="menu" style="margin-top: -5px;">
@@ -115,51 +115,11 @@
 		</li>
 		<li>
 			<a href="">Gallery</a>
-		</li>
+		</li> -->
 		<li>
-			<a href="">Pendaftaran</a>
+			<a href="{{URL::to('/pendaftaran')}}">Pendaftaran</a>
 		</li>
 	</ul>
-</div>
-</div>
-<!--<script>
-	(function ($, window, delay) {
-  // http://jsfiddle.net/AndreasPizsa/NzvKC/
-  var theTimer = 0;
-  var theElement = null;
-  var theLastPosition = {x:0,y:0};
-  $('[data-toggle]')
-  .closest('li')
-  .on('mouseenter', function (inEvent) {
-  	if (theElement) theElement.removeClass('open');
-  	window.clearTimeout(theTimer);
-  	theElement = $(this);
 
-  	theTimer = window.setTimeout(function () {
-  		theElement.addClass('open');
-  	}, delay);
-  })
-  .on('mousemove', function (inEvent) {
-  	if(Math.abs(theLastPosition.x - inEvent.ScreenX) > 4 || 
-  		Math.abs(theLastPosition.y - inEvent.ScreenY) > 4)
-  	{
-  		theLastPosition.x = inEvent.ScreenX;
-  		theLastPosition.y = inEvent.ScreenY;
-  		return;
-  	}
-  	
-  	if (theElement.hasClass('open')) return;
-  	window.clearTimeout(theTimer);
-  	theTimer = window.setTimeout(function () {
-  		theElement.addClass('open');
-  	}, delay);
-  })
-  .on('mouseleave', function (inEvent) {
-  	window.clearTimeout(theTimer);
-  	theElement = $(this);
-  	theTimer = window.setTimeout(function () {
-  		theElement.removeClass('open');
-  	}, delay);
-  });
-})(jQuery, window, 100); // 200 is the delay in milliseconds
-</script>
+</div> 
+</div> 

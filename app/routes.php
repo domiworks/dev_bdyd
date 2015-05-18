@@ -14,7 +14,9 @@
 //Home
 Route::get('/', function()
 {
-	return View::make('pages.front.home.home');
+	// return View::make('pages.front.home.home');
+		return View::make('pages.front.bdyd_2015.audisi_dan_lomba.audisi_dan_lomba');
+
 });
 
 //BDYD 2015

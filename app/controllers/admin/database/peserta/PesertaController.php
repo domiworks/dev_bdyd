@@ -50,6 +50,8 @@ class PesertaController extends BaseController {
 		$tb3_start = new DateTime('2015-09-01 00:00:00');
 		$tb3_end 	= new DateTime('2015-09-30 23:59:59'); 
 
+		//300 350 400 minggu
+
 		if($jumlah_hari == 1){ //daytype
 			if($kota_bandung == 'bandung'){ //dalam kota
 				if(($tb1_start < $current_time) && ($current_time < $tb1_end)){ // bird 1
@@ -122,7 +124,7 @@ class PesertaController extends BaseController {
 		$new_pendaftar->tanggal_lahir 		= $tanggal_lahir;
 		$new_pendaftar->alamat_tinggal 		= $alamat_tinggal;
 		$new_pendaftar->kota_tinggal 		= $kota_tinggal;
-		$new_pendaftar->no_handphone 		= $no_handphone;
+		$new_pendaftar->no_handphone 		= '+62'.$no_handphone;
 		$new_pendaftar->pekerjaan 			= $pekerjaan;
 		$new_pendaftar->kegiatan_gereja 	= $kegiatan_gereja;
 		$new_pendaftar->hobi_bakat 			= $hobi_bakat;
@@ -152,7 +154,29 @@ class PesertaController extends BaseController {
 			$randomString .= $characters[rand(0, $charactersLength - 1)];
 		}
 
-		$new_pendaftar->id_pendaftaran 		= $randomString;
+		$quota_total = Quota::where('id','=','1')->first();
+		$total_quota_sementara = $quota_total->jumlah + 1; 
+		$quota_total->jumlah = $total_quota_sementara;
+
+		//format id pendaftaran
+		$dl_id = '';
+		$coce_id ='';
+		$paroki_id = $paroki;
+		$kode_daftar =  $total_quota_sementara;
+		if($kota_bandung == 'bandung' ){
+			$dl_id = 'D';
+		}else{
+			$dl_id = 'L';
+		};
+
+		if($jenis_kelamin == '0'){
+			$coce_id = 'ce';
+		}else{
+			$coce_id = 'co';
+		};
+		
+		// $string = preg_replace('/\s+/', '', $string);
+		$new_pendaftar->id_pendaftaran 		= preg_replace('/\s+/', '', $dl_id.$coce_id.$paroki_id.$kode_daftar);
 
 		//cek nama
 		// $known_name = Peserta::where('nama_lengkap','')
@@ -167,75 +191,86 @@ class PesertaController extends BaseController {
 		// }
 
 		try{
-			$new_pendaftar->save();
+
+			$cek_email_db = Peserta::where('email','=',$email)->first(); 
+			if(count($cek_email_db) > 0){
+				//ada email sama
+				// break;
+			}
+
+			$new_pendaftar->save(); 
+			$quota_total->save();
  
  			//kirim ke pendaftar
 			$email_address = $email; 
 			$to = $email_address;
 			$subject = "Pendaftaran BDYD";
 
-			$headers = "From: ".$email_address."\r\n";
-			$headers .= "Reply-To: ".$email_address."\r\n";
+			$headers = "From: registrasi.bdyd2014e\r\n";
+			$headers .= "Reply-To: registrasi.bdyd2014@gmailr\n";
 			$headers .= "Return-Path: ".$email_address."\r\n";
 			$headers .= "MIME-Version: 1.0\r\n";
 			$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-			$message = "Pendaftaran BDYD<br/>";  
-			$message .= "ID: ".$nama_lengkap."<br/>";
-			$message .= "ID: ".$nama_panggilan."<br/>";
-			$message .= "ID: ".$jenis_kelamin."<br/>";
-			$message .= "ID: ".$tempat_lahir."<br/>";
-			$message .= "ID: ".$tanggal_lahir."<br/>";
-			$message .= "ID: ".$alamat_tinggal."<br/>";
-			$message .= "ID: ".$kota_tinggal."<br/>";
-			$message .= "ID: ".$no_handphone."<br/>";
-			$message .= "ID: ".$pekerjaan."<br/>";
-			$message .= "ID: ".$kegiatan_gereja 	."<br/>";
-			$message .= "ID: ".$hobi_bakat."<br/>";
-			$message .= "ID: ".$dekanat."<br/>";
-			$message .= "ID: ".$paroki."<br/>";
-			$message .= "ID: ".$kesediaan_informasi."<br/>";
+			// $message = "Pendaftaran BDYD<br/>";  
+			// $message .= "ID: ".$nama_lengkap."<br/>";
+			// $message .= "ID: ".$nama_panggilan."<br/>";
+			// $message .= "ID: ".$jenis_kelamin."<br/>";
+			// $message .= "ID: ".$tempat_lahir."<br/>";
+			// $message .= "ID: ".$tanggal_lahir."<br/>";
+			// $message .= "ID: ".$alamat_tinggal."<br/>";
+			// $message .= "ID: ".$kota_tinggal."<br/>";
+			// $message .= "ID: ".$no_handphone."<br/>";
+			// $message .= "ID: ".$pekerjaan."<br/>";
+			// $message .= "ID: ".$kegiatan_gereja 	."<br/>";
+			// $message .= "ID: ".$hobi_bakat."<br/>";
+			// $message .= "ID: ".$dekanat."<br/>";
+			// $message .= "ID: ".$paroki."<br/>";
+			// $message .= "ID: ".$kesediaan_informasi."<br/>";
 
-
-
+			$message = "<html><body>";
+			$message .= "<table rules='all' cellpadding='20'>";
+			$message .= "<tr>";
+			$message .= "<td style='text-align: center;'>	"; 
+			$message .= "</td></tr><tr><td>";
+			$message .= "<h1 style='font-family: Open Sans, helvetica, arial, sans-serif; font-weight: 300; text-align: center; color: #228b22;'>Thank you!</h1>";
+			$message .= "<h2 style='font-family: Open Sans, helvetica, arial, sans-serif; font-weight: 300; text-align: center;'>$nama_lengkap</h2>";
+			$message .= "<h3 style='font-family: Open Sans, helvetica, arial, sans-serif; font-weight: 300; text-align: center;'>No. Pendaftaran Anda adalah ID SEKIAN</h3>";
+			$message .= "<p style='font-family: Open Sans, helvetica, arial, sans-serif; text-align: center; width: 570px;'>";
+			$message .= "Karena telah mendaftarkan diri di <a href='http://bdyd.info/'>BDYD 2015</a> <br/>yang akan diadakan pada Bulan Oktober 2015</p></td></tr>";
+			$message .="</table></body></html>";
+ 
 			mail($to,$subject,$message,$headers,'-f'.$email_address);	
 
 			$email_admin= Admin::all();
 
-
 			//kirim ke pantia
 			$email_address = $email; 
-			$to = "peijumastery@hotmail.com";
+			$to = "lief.johan@gmail.com";
 			$subject = "Pendaftaran BDYD";
 
-			$headers = "From: ".$email_address."\r\n";
-			$headers .= "Reply-To: ".$email_address."\r\n";
+			$headers = "From: registrasi.bdyd2014@bdyd.info\r\n";
+			$headers .= "Reply-To: registrasi.bdyd2014@gmail\r\n";
 			$headers .= "Return-Path: ".$email_address."\r\n";
 			$headers .= "MIME-Version: 1.0\r\n";
 			$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-			$message = "Pendaftaran BDYD<br/>";  
-			$message .= "ID: ".$nama_lengkap."<br/>";
-			$message .= "ID: ".$nama_panggilan."<br/>";
-			$message .= "ID: ".$jenis_kelamin."<br/>";
-			$message .= "ID: ".$tempat_lahir."<br/>";
-			$message .= "ID: ".$tanggal_lahir."<br/>";
-			$message .= "ID: ".$alamat_tinggal."<br/>";
-			$message .= "ID: ".$kota_tinggal."<br/>";
-			$message .= "ID: ".$no_handphone."<br/>";
-			$message .= "ID: ".$pekerjaan."<br/>";
-			$message .= "ID: ".$kegiatan_gereja 	."<br/>";
-			$message .= "ID: ".$hobi_bakat."<br/>";
-			$message .= "ID: ".$dekanat."<br/>";
-			$message .= "ID: ".$paroki."<br/>";
-			$message .= "ID: ".$kesediaan_informasi."<br/>";
+			$message = "<html><body>";
+			$message .= "<table rules='all' cellpadding='20'>";
+			$message .= "<tr>";
+			$message .= "<td style='text-align: center;'>	"; 
+			$message .= "</td></tr><tr><td>";
+			$message .= "<h1 style='font-family: Open Sans, helvetica, arial, sans-serif; font-weight: 300; text-align: center; color: #228b22;'>Thank you!</h1>";
+			$message .= "<h2 style='font-family: Open Sans, helvetica, arial, sans-serif; font-weight: 300; text-align: center;'>$nama_lengkap</h2>";
+			$message .= "<h3 style='font-family: Open Sans, helvetica, arial, sans-serif; font-weight: 300; text-align: center;'>No. Pendaftaran Anda adalah ID SEKIAN</h3>";
+			$message .= "<p style='font-family: Open Sans, helvetica, arial, sans-serif; text-align: center; width: 570px;'>";
+			$message .= "Karena telah mendaftarkan diri di <a href='http://bdyd.info/'>BDYD 2015</a> <br/>yang akan diadakan pada Bulan Oktober 2015</p></td></tr>";
+			$message .="</table></body></html>";
 
-			mail($to,$subject,$message,$headers,'-fpeijumastery@hotmail.com');	
+			mail($to,$subject,$message,$headers,'-flief.johan@gmail.com');	
 
-
-			// return $email_admin[0]->username;
-			//nama, tanggal lahir, paroki
-			return $email_address;
+ 
+			return $new_pendaftar->id_pendaftaran;
 		}
 		catch(Exception $e){
 			return $e;
@@ -246,6 +281,10 @@ class PesertaController extends BaseController {
 	public function confirm_registration() {
 		return 'confirm registration';
 	}	
+
+	public function get_all(){
+		return Peserta::all();
+	}
 
 
 

@@ -3,6 +3,7 @@
 
 @include('navigations.front')
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,15 +86,80 @@
 </body>
 </html>
 <!--<section class="s_common_ctr">
+=======
+
+
+<section class="s_common_ctr">
+>>>>>>> dce91cfead35ba9b45618039323f46ae80762706
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-10 col-xs-push-1">
 
+<<<<<<< HEAD
 				<!--Contact Person    : Evelyn 08974168238 <BR>
 				Link Pendaftaran  :<a href="http://bit.ly/bdyd2015_audisi_band"> bit.ly/bdyd2015_audisi_band</a><br>
 				Tanggal Audisi : Minggu, 5 Juli 2015 <br><br>-->
 
 				<!--<h2>AUDISI DAN LOMBA</h2>				
+=======
+			<h2>PRE EVENT</h2>	<br>		
+				<p align=justify>&nbsp &nbsp &nbsp &nbsp Kami percaya bahwa BDYD 2015 adalah sebuah media dimana para kaum muda Katolik dapat berkumpul dan bertumbuh di dalam Iman. BDYD 2015 bukanlah sebuah moment tetapi sebuah proses para OMK untuk lebih mengenal sebuah pelayanan yang didasari oleh komitment dan semangat untuk melakukan sebuah perubahan yang positif. 
+<br>
+&nbsp &nbsp &nbsp &nbsp Dengan tujuan tersebut Pre-Event BDYD 2015 kami rancang untuk mempersiapkan setiap hati OMK menyambut acara puncak BDYD pada tanggal 17 dan 18 Oktober 2015. Pre Event ini akan terdiri dari berbagai macam Audisi dan Lomba sebagai proses pengembangan talenta setiap peserta.</p>
+				
+
+<div style="position: relative; bottom: 0px; left: 0px; height: 100%; width: 100%; background-color: rgba(38, 34, 97,0.8);">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-3" style="height: 155px;  ">
+					<div class="s_tbl">
+						<div class="s_cell">
+							
+							<h3 style=" font-weight: 300; color: #fff; text-align: center; display: block;"><a href="#audisi_band"><font style="color:white"><img src={{asset("assets/img/drum.png")}} alt="test" style="width:100px;height:80px" ><br>Audisi Band</font></a></h3>
+							
+							<span style="text-align: center; color: #fff; display: block;">
+							
+							<!--Pendaftaran  :<a href="http://bit.ly/bdyd2015_audisi_band"> bit.ly/bdyd2015_audisi_band</a><br> -->
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3" style="height: 155px;  ">
+					<div class="s_tbl">
+						<div class="s_cell">
+							<h3 style=" font-weight: 300; color: #fff; text-align: center; display: block;"><a href="#audisi_drama_musikal"><font style="color:white"><img src={{asset("assets/img/dramus.png")}} alt="test" style="width:100px;height:80px" ><br>Audisi Drama Musikal</font></a></h3>
+							<span style="text-align: center; color: #fff; display: block;">
+							<!--Pendaftaran :<a href="http://bit.ly/bdyd2015_audition"> bit.ly/bdyd2015_audition</a><br>-->
+							</span>
+						</div>
+					</div>
+				</div> 
+				<div class="col-lg-3" style="height: 155px; ">
+					<div class="s_tbl">
+						<div class="s_cell">
+							<h3 style=" font-weight: 300; color: #fff; text-align: center; display: block;"><a href="#audisi_mc"><font style="color:white"><img src={{asset("assets/img/mic.png")}} alt="test" style="width:100px;height:80px" ><br>Audisi MC</font></a></h3>
+							<span style="text-align: center; color: #fff; display: block;">
+							<!--	Pendaftaran :<a href="http://bit.ly/bdyd2015_audisi_mc"> http://bit.ly/bdyd2015_audisi_mc</a>-->
+							</span>
+						</div>
+					</div>
+				</div>
+<div class="col-lg-3" style="height: 155px; ">
+					<div class="s_tbl">
+						<div class="s_cell">
+							<h3 style="font-weight: 300; color: #fff; text-align: center; display: block;"><a href="#audisi_talent"><font style="color:white"><img src={{asset("assets/img/star.png")}} alt="test" style="width:100px;height:80px" ><br>Audisi Talent</font></a></h3>
+							<span style="text-align: center; color: #fff; display: block;">
+								<!--Pendaftaran :<a href="http://bit.ly/bdyd2015_audisi _talent"> http://bit.ly/bdyd2015_audisi _talent </a> -->
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<br>
+				<h2><div id="audisi_band">AUDISI BAND</div></h2>				
+>>>>>>> dce91cfead35ba9b45618039323f46ae80762706
 				Contact Person    : Evelyn 08974168238 <BR>
 				Link Pendaftaran  :<a href="http://bit.ly/bdyd2015_audisi_band"> bit.ly/bdyd2015_audisi_band</a><br>
 				Tanggal Audisi : Minggu, 5 Juli 2015 <br><br>
@@ -135,7 +201,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-10 col-xs-push-1">
-				<h2>AUDISI DRAMA MUSIKAL</h2>
+				<h2><div id="audisi_drama_musikal">AUDISI DRAMA MUSIKAL</div></h2>
 				
 				
 				
@@ -178,7 +244,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-10 col-xs-push-1">
-				<h2>AUDISI MC </h2>
+				<h2><div id="audisi_mc">AUDISI MC</div> </h2>
 				
 				
 
@@ -213,7 +279,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-10 col-xs-push-1">
-					<h2>AUDISI TALENT</h2>
+					<h2><div id="audisi_talent">AUDISI TALENT</div></h2>
 					Talent akan diseleksi dengan dengan menggunakan hasil rekaman video. Hasil rekaman video dapat di upload ke Youtube dengan format <Judul Talent> - Audisi Talent BDYD 2015 atau dikirim langsung dalam amplop tertutup dalam bentuk CD atau flashdisk ke: <br><br>
 
 					<b> Panitia Bandung Diocese Youth Day 2015 </b><br>

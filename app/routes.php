@@ -57,6 +57,13 @@ Route::get('/gallery', function()
 	return View::make('pages.front.gallery.gallery');
 });
 
+Route::get('/home', function()
+{
+	// return View::make('pages.front.home.home');
+		return View::make('pages.front.home.home');
+
+});
+
 /*
 |--------------------------------------------------------------------------
 |	Pendaftaran
@@ -80,3 +87,9 @@ Route::get('/pendaftaran', ['as'=>'tamu.page_pendaftaran', 'uses'=>'PendaftaranF
 Route::get('/konfirmasi', ['as'=>'tamu.page_konfirmasi', 'uses'=>'PendaftaranFrontController@view_konfirmasi']);
 
 
+Route::get('/manage_about', function()
+{
+	// return View::make('pages.front.home.home');
+		return View::make('pages.admin.manage_about.manage_about');
+
+});

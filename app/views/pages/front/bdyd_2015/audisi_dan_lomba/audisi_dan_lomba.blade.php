@@ -3,17 +3,97 @@
 
 @include('navigations.front')
 
-<section class="s_common_ctr">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron">
+    <h2>PRE EVENT</h2>
+    <p>Bandung Diocese Youth Day 2015 <a href="http:twitter.com">#kanLuOMKjuga!!</a></p>
+    <p>Kami percaya bahwa BDYD 2015 adalah sebuah media dimana para kaum muda Katolik dapat berkumpul dan bertumbuh di dalam Iman. BDYD 2015 bukanlah sebuah moment tetapi sebuah proses para OMK untuk lebih mengenal sebuah pelayanan yang didasari oleh komitment dan semangat untuk melakukan sebuah perubahan yang positif. 
+	Dengan tujuan tersebut Pre-Event BDYD 2015 kami rancang untuk mempersiapkan setiap hati OMK menyambut acara puncak BDYD pada tanggal 17 dan 18 Oktober 2015. Pre Event ini akan terdiri dari berbagai macam Audisi dan Lomba sebagai proses pengembangan talenta setiap peserta.</p>
+</div>
+<h2>AUDISI</h2>
+	<div class="row">
+    <div class="col-sm-4">
+      <h3>Audisi MC</h3>
+	  <p>Contact Person : Regina 085795818598</p>
+	  <p>Link Pendaftaran :<a href="http://bit.ly/bdyd2015_audisi_mc"> bit.ly/bdyd2015_audisi_mc</a></p>
+	  <p>Tanggal Audisi : Minggu, 2 Agustus 2015 </p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Audisi Drama</h3>
+      <p>Contact Person : Evelyn 08974168238</p>
+	  <p>Link Pendaftaran :<a href="http://bit.ly/bdyd2015_audition"> bit.ly/bdyd2015_audition</a></p>
+	  <p>Tanggal Audisi : Minggu, 21 Juni 2015</p>
+      </div>
+    <div class="col-sm-4">
+      <h3>Audsis Band</h3>        
+      <p>Contact Person    : Evelyn 08974168238</p>
+      <p>Link pendaftaran : <a href="http://bit.ly/bdyd2015_audisi_band"> bit.ly/bdyd2015_audisi_band</a><br></p>
+      <p>Tanggal Audisi : Minggu, 5 Juli 2015</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Audsis Talent</h3>        
+   <p>Contact Person : Nadia 089628723437<p>
+   <p>Link Pendaftaran :<a href="http://bit.ly/bdyd2015_audisi _talent"> bit.ly/bdyd2015_audisi _talent </a></p>
+    </div>
+  </div>
+  <h2>LOMBA</h2>
+	<div class="row">
+    <div class="col-sm-4">
+      <h3>Lomba Koor</h3>
+	  <p>Contact Person : Dimas 08996899349</p>
+	  <p>Link Pendaftaran :<a href="http://bit.ly/bdyd2015_lomba_koor"> bit.ly/bdyd2015_lomba_koor</a></p>
+	  <p>Tanggal Audisi : Minggu, 9 Agustus 2015 </p>
+    </div>
+    <!--<div class="col-sm-4">
+      <h3>Lomba Foto</h3>
+      <p>Contact Person :Regina (line:gabriegi_wisastra) 08972240185</p>
+	  <p>Link Pendaftaran :<a href="http://bit.ly/bdyd2015_lomba_photo"> bit.ly/bdyd2015_lomba_photo</a></p>
+	  <p>Tanggal Audisi : soon !!</p>
+      </div>
+    <div class="col-sm-4">
+      <h3>Audsis Video</h3>        
+      <p>Contact Person    : Evelyn 08974168238</p>
+      <p>Link pendaftaran : <a href="http://bit.ly/bdyd2015_lomba_video"> bit.ly/bdyd2015_lomba_video</a><br></p>
+      <p>Tanggal Audisi : 24 April 2015</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Audsis Talent</h3>        
+   <p>Contact Person : Nadia 089628723437<p>
+   <p>Link Pendaftaran :<a href="http://bit.ly/bdyd2015_audisi _talent"> http://bit.ly/bdyd2015_audisi _talent </a></p>
+    </div>-->
+  </div>
+  <h2>KETENTUAN AUDISI DAN LOMBA</h2>
+	<div class="row">
+    <div class="col-sm-4">
+      
+	  
+    </div>
+
+</div>
+
+</body>
+</html>
+<!--<section class="s_common_ctr">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-10 col-xs-push-1">
 
-				<h2>Pre vent</h2>				
-				Contact Person    : Evelyn 08974168238 <BR>
+				<!--Contact Person    : Evelyn 08974168238 <BR>
 				Link Pendaftaran  :<a href="http://bit.ly/bdyd2015_audisi_band"> bit.ly/bdyd2015_audisi_band</a><br>
-				Tanggal Audisi : Minggu, 5 Juli 2015 <br><br>
+				Tanggal Audisi : Minggu, 5 Juli 2015 <br><br>-->
 
-				<h2>AUDISI BAND</h2>				
+				<!--<h2>AUDISI DAN LOMBA</h2>				
 				Contact Person    : Evelyn 08974168238 <BR>
 				Link Pendaftaran  :<a href="http://bit.ly/bdyd2015_audisi_band"> bit.ly/bdyd2015_audisi_band</a><br>
 				Tanggal Audisi : Minggu, 5 Juli 2015 <br><br>
@@ -59,9 +139,7 @@
 				
 				
 				
-				Contact Person : Evelyn 08974168238 <br>
-				Link Pendaftaran :<a href="http://bit.ly/bdyd2015_audition"> bit.ly/bdyd2015_audition</a><br>
-				Tanggal Audisi : Minggu, 21 Juni 2015 <br><br>
+				
 				
 				<li>Ketentuan Peserta</li>
 				<ol>
@@ -102,9 +180,7 @@
 			<div class="col-xs-10 col-xs-push-1">
 				<h2>AUDISI MC </h2>
 				
-				Contact Person : Regina 085795818598 </br>
-				Link Pendaftaran :<a href="http://bit.ly/bdyd2015_audisi_mc"> http://bit.ly/bdyd2015_audisi_mc</a></br>
-				Tanggal Audisi : Minggu, 2 Agustus 2015 </br></br>
+				
 
 				<li>Ketentuan Peserta</li>
 				<ol>
@@ -148,8 +224,9 @@
 
 
 
-					Contact Person : Nadia 089628723437 <br>
-					Link Pendaftaran :<a href="http://bit.ly/bdyd2015_audisi _talent"> http://bit.ly/bdyd2015_audisi _talent </a><br>
+					<p>Contact Person : Nadia 089628723437<p>
+					<p>Link Pendaftaran :<a href="http://bit.ly/bdyd2015_audisi _talent"> http://bit.ly/bdyd2015_audisi _talent </a></p>
+
 					<br>
 
 					<li>Ketentuan Peserta</li>

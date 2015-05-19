@@ -1,82 +1,155 @@
 @extends('layouts.layout')
-@section('content')	
+@section('content')  
 
-<section class="s_top_nav_cntr">
-	<div class="container-fluid">
-		@include('navigations.front')
-		
+@include('navigations.front')
 
+<!DOCTYPE html>
+<html lang="en">
 
-		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 60vh;">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-  </ol>
-  
+<head>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="{{ asset('assets/img/.jpg') }}" alt="OMK" style="heigth: 60vh;">
-    </div>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <div class="item">
-      <img src="{{ asset('assets/img/.jpg') }}" alt="OMK">
-    </div>
+    <title>BDYD 2015</title>
 
-    <div class="item">
-      <img src="{{ asset('assets/img/.jpg') }}" alt="OMK">
-    </div>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <div class="item">
-      <img src="{{ asset('assets/img/.jpg') }}" alt="OMK">
-    </div>
-  </div>
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
 
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>	
-	</div>
-</section>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-@include('pages.front.home.landing')
+</head>
 
-<section class="s_common_ctr">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-10 col-xs-push-1">
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 
-				
-				<h2>Pendahuluan</h2>
-				<p><B>Bandung Diocese Youth Day</B>,atau biasa disingkat BDYD merupakan Hari Orang Muda Katolik (OMK) se-Keuskupan Bandung yang diselenggarakan oleh Komisi Kepemudaan Keuskupan Bandung. BDYD merupakan suatu perayaan iman, saat OMK Keuskupan Bandung yang berasal dari berbagai paroki dan kategorial berkumpul bersama, saling mengenal, meneguhkan, dan berbagi satu sama lain. 
-					Di tingkat dunia, perjumpaan OMK dilaksanakan dalam bentuk<b><i> World Youth Day</i></b> (terakhir pada tahun 2013 di Rio de Janeiro, Brasil dan berikutnya tahun 2016 di Krakow, Polandia). Di tingkat Asia terdapat <b><i>Asian Youth Day</b></i> (terakhir pada tahun 2014 di Korea Selatan dan berikutnya tahun 2017 di Yogyakarta, Indonesia). Di tingkat Indonesia sendiri terdapat<b><i> Indonesian Youth Day</i></b> (terakhir pada tahun 2012 di Sanggau, Kalimantan Barat dan berikutnya tahun 2016 di Manado, Sulawesi Utara).
-				</p>		
-				<p>BDYD kali ini merupakan penyelenggaraan yang ketiga, setelah tahun 2011 dan 2013.BDYD diadakan pertama kali pada tahun 2011. Tema yang diangkat pada BDYD pertama ini adalah<b><i> "Orang Muda Peduli Budaya".</i></b> Pada BDYD pertama ini pula<i> theme song </i> dan logo BDYD dibuat. Berbagai acara pra-BDYD dilakukan, mencakup lomba futsal, fotografi, jingle, serta vocal group antar paroki se-Keuskupan Bandung. Selain itu terdapat pula job fair sebagai bagian dari pra-BDYD. Rangkaian acara puncak BDYD pertama ini diawali dengan workshop selama 4 hari.
-				 Workshop ini diselenggarakan dengan berbagai tema, yaitu lingkungan hidup, teater rakyat, liturgi, enterpreneurship, dan politik. Acara puncak ini dimahkotai dengan perayaan Ekaristi yang dipimpin<b><i> Mgr. Ignatius Suharyo dan celebration di GOR Pajajaran pda tanggal 2 Juli 2011.</i></b>
-				</p>
-				<p>BDYD kemudian diadakan untuk kedua kalinya di tahun 2013. BDYD 2013 mengambil tema<b> “Katolik Imanku, Garuda di Dadaku”</b>. Rangkaian acara pra-BDYD kali ini cukup unik, yaitu lomba membuat rosario dan lomba membuat ilustrasi perhentian jalan salib antar paroki. Bahan untuk pembuatan rosario dan ilustrasi ini dari barang bekas lho! Selain lomba, terdapat juga Massive via Dolorosa (MVD). MVD ini merupakan jalan salib keliling, dimana ke-14 perhentiannya merupakan 13 paroki di Kota Bandung, dan 1 pada acara puncak.
-				 Melalui MVD ini pula panitia BDYD melakukan kunjungan ke OMK paroki. Acara puncak BDYD kedua diadakan pada 26-27 Oktober 2013 di Kompleks Sekolah Santo Aloysius Sultan Agung. Acara puncak ini berisi berbagai workshop sesuai tema, di antaranya<i> Catholic Buzzing </i><b> (Iman Katolik di mata Anak Muda)</b>, Ngariung Sasarengan<b><i> (Ecopreneurship, Savvy Citizen, dan Socialtech </i></b> - peranan OMK dalam permasalahan hidup kewirausahaan dan lingkungan, sosial politik, serta teknologi dan pergaulan), serta Katolik?<i> Abdi Pisan Euy!</i><b> (Sumbangsih OMK untuk Indonesia tercinta)</b>. Selain workshop, terdapat pula Adorasi serta Misa Budaya yang dipimpin oleh 14 imam dengan konselebran utama<b> R.D. Paulus Wirasmohadi Soerjo </b>(Vikjen Keuskupan Bandung saat itu). 
-				 BDYD 2013 ini melibatkan sekitar<b> 1500 OMK </B>baik sebagai panitia, peserta, maupun pengisi acara.
-				</p>
-				<p>Pada tahun ini, direncanakanlah BDYD untuk ketiga kalinya. BDYD ini mau mengajak OMK Keuskupan Bandung untuk berani berkarya dan diutus, sehingga mengambil tema<b> "Pergilah, Kamu Diutus!"</b> dan tagline<b> #kanluOMKjuga. </b> Tagline ini diangkat sebagai pemersatu dan merupakan alasan fundamental mengapa peserta mengemban tugas perutusan. Acara puncak BDYD ketiga ini akan diadakan pada tanggal<b> 17-18 Oktober 2015</b>, dengan target peserta 3000 OMK Keuskupan Bandung.
-				</p>		
-			</div>
-		</div>
-	</div>
-</section>
-<section class="s_common_ctr">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-10 col-xs-push-1">
-				
-@stop
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">BDYD</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Scrolling Nav</h1>
+                    <p><strong>Usage Instructions:</strong> Make sure to include the <code>scrolling-nav.js</code>, <code>jquery.easing.min.js</code>, and <code>scrolling-nav.css</code> files. To make a link smooth scroll to another section on the page, give the link the <code>.page-scroll</code> class and set the link target to a corresponding ID on the page.</p>
+                  <p>Dewasa ini segala hal menjadi serba instan. Semua orang ingin mengerjakan semuanya dengan cepat tanpa merepotkan dirinya sendiri. Semakin banyak makanan cepat saji yang diproduksi dalam wadah berbahan dasar plastik, sterofoam dan kertas untuk menjawab kebutuhan manusia. Hal itu menyebabkan 'produksi' sampah juga semakin banyak.
+Mahasiswa sebagai agen perubahan seharusnya bisa memberi dampak positif dari ilmunya untuk diaplikasikan pada lingkungan sekitar. Mahasiswa seharusnya juga turut mengambil peran terhadap hal-hal yang terjadi di lingkungan universitas mereka masing-masing.
+
+David McClelland, seorang sosiolog terkemuka, mengatakan bahwa suatu negara akan maju jika terdapat entrepreneur sedikitnya sebanyak 2% dari total jumlah penduduknya. Sedangkan saat ini presentase entrepreneur di Indonesia hanya sebesar 1,26% dari jumlah penduduk. Melihat adanya hal tersebut, perlu adanya pemberian pengarahan yang aplikatif mengenai entrepreneurship kepada mahasiswa yang merupakan pemegang peranan penting dalam pertumbuhan entrepreneur di Indonesia.
+
+Oleh karena itu, acara Parahyangan Green Challenge yang akan diselenggarakan di Universitas Kato
+                    <a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>About Section</h1>
+                </div>
+                <p>Dewasa ini segala hal menjadi serba instan. Semua orang ingin mengerjakan semuanya dengan cepat tanpa merepotkan dirinya sendiri. Semakin banyak makanan cepat saji yang diproduksi dalam wadah berbahan dasar plastik, sterofoam dan kertas untuk menjawab kebutuhan manusia. Hal itu menyebabkan 'produksi' sampah juga semakin banyak.
+Mahasiswa sebagai agen perubahan seharusnya bisa memberi dampak positif dari ilmunya untuk diaplikasikan pada lingkungan sekitar. Mahasiswa seharusnya juga turut mengambil peran terhadap hal-hal yang terjadi di lingkungan universitas mereka masing-masing.
+
+David McClelland, seorang sosiolog terkemuka, mengatakan bahwa suatu negara akan maju jika terdapat entrepreneur sedikitnya sebanyak 2% dari total jumlah penduduknya. Sedangkan saat ini presentase entrepreneur di Indonesia hanya sebesar 1,26% dari jumlah penduduk. Melihat adanya hal tersebut, perlu adanya pemberian pengarahan yang aplikatif mengenai entrepreneurship kepada mahasiswa yang merupakan pemegang peranan penting dalam pertumbuhan entrepreneur di Indonesia.
+
+Oleh karena itu, acara Parahyangan Green Challenge yang akan diselenggarakan di Universitas Katolik Parahyangan dibuat dalam lingkup nasional untuk memberikan pemahaman kepada mahasiswa di Indonesia akan bahaya dan dampak yang ditimbulkan oleh sampah dalam lingkungan universitasnya masing-masing. Acara Parahyangan Green Challenge juga mengajak mahasiswa untuk melakukan pengolahan sampah menjadi suatu barang yang memberikan nilai tambah dan dapat dijual kembali. Sampah yang akan diolah adalah sampah yang dimiliki warga sekitar universitas dan aplikatif yang dapat membantu warga untuk meringankan masalah sosial warga. Kegiatan Parahyangan Green Challenge akan memberikan dorongan kepada mahasiswa sehingga timbul kecintaan pada lingkungan, kepekaan, dan hati yang tergerak untuk membuat suatu perubahan di lingkungan tempat tinggal mereka.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Services Section</h1>
+                </div><p>Dewasa ini segala hal menjadi serba instan. Semua orang ingin mengerjakan semuanya dengan cepat tanpa merepotkan dirinya sendiri. Semakin banyak makanan cepat saji yang diproduksi dalam wadah berbahan dasar plastik, sterofoam dan kertas untuk menjawab kebutuhan manusia. Hal itu menyebabkan 'produksi' sampah juga semakin banyak.
+Mahasiswa sebagai agen perubahan seharusnya bisa memberi dampak positif dari ilmunya untuk diaplikasikan pada lingkungan sekitar. Mahasiswa seharusnya juga turut mengambil peran terhadap hal-hal yang terjadi di lingkungan universitas mereka masing-masing.
+
+David McClelland, seorang sosiolog terkemuka, mengatakan bahwa suatu negara akan maju jika terdapat entrepreneur sedikitnya sebanyak 2% dari total jumlah penduduknya. Sedangkan saat ini presentase entrepreneur di Indonesia hanya sebesar 1,26% dari jumlah penduduk. Melihat adanya hal tersebut, perlu adanya pemberian pengarahan yang aplikatif mengenai entrepreneurship kepada mahasiswa yang merupakan pemegang peranan penting dalam pertumbuhan entrepreneur di Indonesia.
+
+Oleh karena itu, acara Parahyangan Green Challenge yang akan diselenggarakan di Universitas Katolik Parahyangan dibuat dalam lingkup nasional untuk memberikan pemahaman kepada mahasiswa di Indonesia akan bahaya dan dampak yang ditimbulkan oleh sampah dalam lingkungan universitasnya masing-masing. Acara Parahyangan Green Challenge juga mengajak mahasiswa untuk melakukan pengolahan sampah menjadi suatu barang yang memberikan nilai tambah dan dapat dijual kembali. Sampah yang akan diolah adalah sampah yang dimiliki warga sekitar universitas dan aplikatif yang dapat membantu warga untuk meringankan masalah sosial warga. Kegiatan Parahyangan Green Challenge akan memberikan dorongan kepada mahasiswa sehingga timbul kecintaan pada lingkungan, kepekaan, dan hati yang tergerak untuk membuat suatu perubahan di lingkungan tempat tinggal mereka.
+</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Contact Section</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
+@home
